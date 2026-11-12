@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+.env
+# offline pipeline-test output (not results)
+results/mock-*/
+# llm_calls.sqlite of real runs IS committed: it lets anyone reproduce the reported numbers exactly, for free

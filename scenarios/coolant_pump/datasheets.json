@@ -1,0 +1,69 @@
+{
+  "candidates": [
+    {
+      "id": "A",
+      "name": "AquaDrive CP-40",
+      "passages": [
+        {"id": "A_p1", "text": "Nominal flow 2.7 m³/h at 18 m head (water-glycol 50/50, 20 °C).", "facts": {"flow_lpm": 45, "pressure_bar": 1.76}},
+        {"id": "A_p2", "text": "Permissible fluid temperature −30 °C to +95 °C.", "facts": {"fluid_temp_c": [-30, 95]}},
+        {"id": "A_p3", "text": "Brushless DC motor, 24 V DC, power consumption 180 W at the nominal point.", "facts": {"supply_voltage_v": 24, "power_w": 180}},
+        {"id": "A_p4", "text": "Wetted parts: PPS housing, EPDM seals, ceramic shaft. Suitable for water and water–glycol mixtures (ethylene or propylene glycol up to 50 %).", "facts": {"media_compatibility": ["ethylene glycol", "propylene glycol", "water"]},
+         "alt_text": "Wetted parts: PA housing, NBR seals. Suitable for water and mineral oils only; not approved for glycol mixtures.", "alt_facts": {"media_compatibility": ["water", "mineral oil"]}},
+        {"id": "A_p5", "text": "Sound pressure level 52 dB(A) at 1 m.", "facts": {"noise_dba": 52}},
+        {"id": "A_p6", "text": "Speed control via PWM input or internal fixed speed. Enclosure IP67.", "facts": {"features": ["PWM"], "ip_rating": 67},
+         "alt_text": "Fixed-speed operation only. Enclosure IP44.", "alt_facts": {"features": [], "ip_rating": 44}},
+        {"id": "A_p7", "text": "Design service life 30 000 h. Weight 2.4 kg.", "facts": {"service_life_h": 30000, "mass_kg": 2.4}},
+        {"id": "A_p8", "text": "Price: 410 EUR.", "facts": {"price_eur": 410}}
+      ]
+    },
+    {
+      "id": "B",
+      "name": "TorrentFlow T50",
+      "passages": [
+        {"id": "B_p1", "text": "Flow 3.0 m³/h at 20 m head.", "facts": {"flow_lpm": 50, "pressure_bar": 1.96}},
+        {"id": "B_p2", "text": "Media temperature −20 °C to 110 °C.", "facts": {"fluid_temp_c": [-20, 110]}},
+        {"id": "B_p3", "text": "24 V DC supply, rated input power 260 W.", "facts": {"supply_voltage_v": 24, "power_w": 260}},
+        {"id": "B_p4", "text": "Stainless-steel housing, FKM seals; compatible with glycol-based coolants.", "facts": {"media_compatibility": ["ethylene glycol", "propylene glycol"]},
+         "alt_text": "Aluminium housing, NBR seals; for water and oils only.", "alt_facts": {"media_compatibility": ["water", "mineral oil"]}},
+        {"id": "B_p5", "text": "Noise level 58 dB(A) at 1 m.", "facts": {"noise_dba": 58}},
+        {"id": "B_p6", "text": "PWM or analogue voltage speed input. Protection class IP68.", "facts": {"features": ["PWM", "0-10V"], "ip_rating": 68},
+         "alt_text": "Analogue voltage speed input only. Protection class IP54.", "alt_facts": {"features": ["0-10V"], "ip_rating": 54}},
+        {"id": "B_p7", "text": "MTBF 40 000 h; mass 2.9 kg.", "facts": {"service_life_h": 40000, "mass_kg": 2.9}},
+        {"id": "B_p8", "text": "Price: 380 EUR.", "facts": {"price_eur": 380}}
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Klar EP-24",
+      "passages": [
+        {"id": "C_p1", "text": "Delivers 2.5 m³/h against 16 m of head.", "facts": {"flow_lpm": 41.7, "pressure_bar": 1.57}},
+        {"id": "C_p2", "text": "Fluid temperature −25 to 90 °C.", "facts": {"fluid_temp_c": [-25, 90]}},
+        {"id": "C_p3", "text": "Supply 24 V DC; maximum power 210 W.", "facts": {"supply_voltage_v": 24, "power_w": 210}},
+        {"id": "C_p4", "text": "Housing in glass-fibre reinforced PPS, EPDM seals; approved for ethylene-glycol coolants.", "facts": {"media_compatibility": ["ethylene glycol"]},
+         "alt_text": "Housing in PA, NBR seals; approved for water only.", "alt_facts": {"media_compatibility": ["water"]}},
+        {"id": "C_p5", "text": "Acoustic emission 54 dB(A) at one metre.", "facts": {"noise_dba": 54}},
+        {"id": "C_p6", "text": "Speed setpoint through an analogue voltage input. Enclosure IP65.", "facts": {"features": ["0-10V"], "ip_rating": 65},
+         "alt_text": "Speed setpoint through a PWM input. Enclosure IP67.", "alt_facts": {"features": ["PWM"], "ip_rating": 67}},
+        {"id": "C_p7", "text": "Rated life 25 000 h, mass 2.6 kg.", "facts": {"service_life_h": 25000, "mass_kg": 2.6}},
+        {"id": "C_p8", "text": "Price 295 EUR, two-year warranty.", "facts": {"price_eur": 295}},
+        {"id": "C_p9", "text": "Klar pumps are used in laboratories in more than 40 countries.", "facts": {}}
+      ]
+    },
+    {
+      "id": "D",
+      "name": "MiniCirc 24",
+      "passages": [
+        {"id": "D_p1", "text": "Maximum flow 2.2 m³/h; maximum head 22 m.", "facts": {"flow_lpm": 36.7, "pressure_bar": 2.16}},
+        {"id": "D_p2", "text": "Coolant temperature range −20 °C to +100 °C.", "facts": {"fluid_temp_c": [-20, 100]}},
+        {"id": "D_p3", "text": "24 V DC, 120 W.", "facts": {"supply_voltage_v": 24, "power_w": 120}},
+        {"id": "D_p4", "text": "Wetted materials: PPS and EPDM, suitable for ethylene and propylene glycol up to 60 %.", "facts": {"media_compatibility": ["ethylene glycol", "propylene glycol"]},
+         "alt_text": "Wetted materials: brass and NBR, for potable water.", "alt_facts": {"media_compatibility": ["water"]}},
+        {"id": "D_p5", "text": "Ultra-quiet: 45 dB(A) at 1 m.", "facts": {"noise_dba": 45}},
+        {"id": "D_p6", "text": "PWM speed control, IP67 enclosure.", "facts": {"features": ["PWM"], "ip_rating": 67},
+         "alt_text": "Fixed speed, IP54 enclosure.", "alt_facts": {"features": [], "ip_rating": 54}},
+        {"id": "D_p7", "text": "Service life 50 000 h; 1.8 kg.", "facts": {"service_life_h": 50000, "mass_kg": 1.8}},
+        {"id": "D_p8", "text": "Price 240 EUR.", "facts": {"price_eur": 240}}
+      ]
+    }
+  ]
+}

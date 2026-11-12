@@ -1,0 +1,4568 @@
+{
+ "scenario": "drone_battery",
+ "reference_decision": "D",
+ "noise_floor": {
+  "flips": 3,
+  "n": 9
+ },
+ "reps": 5,
+ "elements_perturbed": [
+  "crit_K1",
+  "crit_K2",
+  "ds_A_p1",
+  "ds_A_p2",
+  "ds_A_p3",
+  "ds_A_p4",
+  "ds_A_p5",
+  "ds_A_p6",
+  "ds_A_p7",
+  "ds_A_p8",
+  "ds_B_p1",
+  "ds_B_p2",
+  "ds_B_p3",
+  "ds_B_p4",
+  "ds_B_p5",
+  "ds_B_p6",
+  "ds_B_p7",
+  "ds_B_p8",
+  "ds_C_p1",
+  "ds_C_p2",
+  "ds_C_p3",
+  "ds_C_p4",
+  "ds_C_p5",
+  "ds_C_p6",
+  "ds_C_p7",
+  "ds_C_p8",
+  "ds_D_p1",
+  "ds_D_p2",
+  "ds_D_p4",
+  "ds_D_p5",
+  "ds_D_p6",
+  "ds_D_p7",
+  "ds_D_p8",
+  "req_R01",
+  "req_R02",
+  "req_R03",
+  "req_R04",
+  "req_R05",
+  "req_R06",
+  "req_R07",
+  "req_R08",
+  "req_R09",
+  "req_R10",
+  "req_R11",
+  "req_R12"
+ ],
+ "collapsed_by_dominator": {
+  "spec_S02": "req_R01",
+  "spec_S03": "req_R02",
+  "spec_S04": "req_R03",
+  "spec_S05": "req_R04",
+  "spec_S06": "req_R05",
+  "spec_S07": "req_R06",
+  "spec_S08": "req_R07",
+  "spec_S09": "req_R08",
+  "spec_S10": "req_R09",
+  "spec_S11": "req_R10",
+  "spec_S12": "req_R11",
+  "spec_S13": "req_R12"
+ },
+ "uncited_passages": [
+  "ds_A_p9",
+  "ds_C_p9",
+  "ds_D_p3"
+ ],
+ "skipped": [],
+ "tests": [
+  {
+   "element": "crit_K1",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 1,
+   "mean_changed_checks": 0.0,
+   "description": "removed K1",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "crit_K1",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 1,
+   "mean_changed_checks": 0.0,
+   "description": "K1 -> lowest mass (g)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "crit_K1",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 1,
+   "mean_changed_checks": 0.0,
+   "description": "injected K1X before K1: longest cycle life",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "crit_K2",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 1,
+   "mean_changed_checks": 0.0,
+   "description": "removed K2",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "crit_K2",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 1,
+   "mean_changed_checks": 0.0,
+   "description": "K2 -> highest stored energy (Wh)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "crit_K2",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 1,
+   "mean_changed_checks": 0.0,
+   "description": "injected K2X before K2: shortest charge time",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p1",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 3.0,
+   "description": "removed A_p1",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p1",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "A_p1 -> 'The Helix pack is a lithium-polymer battery built from six cells in series (4S), nominal voltage 14.9 V, rated capacity 3484 mAh.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p1",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected A_p1x: 'The Helix pack is a lithium-polymer battery built from six cells in series (9S), nominal voltage 33.3 V, rated capacity 7800 mAh.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p2",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed A_p2",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p2",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "A_p2 -> 'Weight 482 g including balance lead. Dimensions 104 x 32 x 34 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p2",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "injected A_p2x: 'Weight 1080 g including balance lead. Dimensions 232 x 72 x 75 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p3",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed A_p3",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p3",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "A_p3 -> 'Discharge rating: 17C continuous, 34C burst for up to 7 s.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p3",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected A_p3x: 'Discharge rating: 38C continuous, 75C burst for up to 15 s.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p4",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed A_p4",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p4",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "A_p4 -> 'Recommended operating temperature: 0 °C to 34 °C. Do not charge below 3 °C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p4",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected A_p4x: 'Recommended operating temperature: 0 °C to 75 °C. Do not charge below 8 °C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p5",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed A_p5",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p5",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "A_p5 -> 'Transport: UN38.3 testing is still in progress; packs currently ship by road only.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p5",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "injected A_p5x: 'Transport: UN38.3 testing is still in progress; packs currently ship by road only.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p6",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed A_p6",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p6",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "A_p6 -> 'Cycle life of at least 201 cycles to 54 % capacity at 1C/1C. Maximum charge rate 1C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p6",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected A_p6x: 'Cycle life of at least 450 cycles to 120 % capacity at 2C/2C. Maximum charge rate 2C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p7",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed A_p7",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p7",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "A_p7 -> 'Output lead: silicone wire terminated with an XT90 connector.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p7",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "injected A_p7x: 'Output lead: silicone wire terminated with an XT90 connector.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p8",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "removed A_p8",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p8",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "A_p8 -> 'Unit price: 127 EUR (minimum order 7 units).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_A_p8",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected A_p8x: 'Unit price: 284 EUR (minimum order 15 units).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p1",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed B_p1",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p1",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 3.0,
+   "description": "B_p1 -> 'Strata Pro: 4S1P configuration, 14.9 V nominal, 4020 mAh / 89 Wh.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p1",
+   "kind": "injection",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "injected B_p1x: 'Strata Pro: 9S1P configuration, 33.3 V nominal, 9000 mAh / 200 Wh.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p2",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 3.0,
+   "description": "removed B_p2",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p2",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "B_p2 -> 'Mass: 529 g. Length x width x height: 106 x 34 x 39 mm.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p2",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "injected B_p2x: 'Mass: 1185 g. Length x width x height: 237 x 75 x 87 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p3",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed B_p3",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p3",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "B_p3 -> 'Maximum continuous discharge current: 80 A.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p3",
+   "kind": "injection",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "injected B_p3x: 'Maximum continuous discharge current: 180 A.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p4",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed B_p4",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p4",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "B_p4 -> 'Operating range −13 °C to +40 °C (self-heating below 0 °C).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p4",
+   "kind": "injection",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "injected B_p4x: 'Operating range −30 °C to +90 °C (self-heating below 0 °C).'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p5",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed B_p5",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p5",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "B_p5 -> 'Certifications: IEC 62133-2, CE.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p5",
+   "kind": "injection",
+   "n": 4,
+   "flips": 3,
+   "flip_rate": 0.75,
+   "p": 0.2167832167832168,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 8,
+   "mean_changed_checks": 0.75,
+   "description": "injected B_p5x: 'Certifications: IEC 62133-2, CE.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p6",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed B_p6",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p6",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "B_p6 -> 'Rated for 335 cycles with at least 54 % remaining capacity. Supports 1C fast charge: full charge in about 20 min.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p6",
+   "kind": "injection",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 6,
+   "mean_changed_checks": 0.6666666666666666,
+   "description": "injected B_p6x: 'Rated for 750 cycles with at least 120 % remaining capacity. Supports 3C fast charge: full charge in about 45 min.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p7",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 3.0,
+   "description": "removed B_p7",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p7",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 4.0,
+   "description": "B_p7 -> 'Basic protection circuit without data interface; XT60 connector; enclosure not rated.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p7",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected B_p7x: 'Basic protection circuit without data interface; XT60 connector; enclosure not rated.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_B_p8",
+   "kind": "removal",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "removed B_p8",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p8",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "B_p8 -> 'List price: 234 EUR per unit.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_B_p8",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected B_p8x: 'List price: 524 EUR per unit.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p1",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed C_p1",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p1",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "C_p1 -> 'Nordcell N6 series pack: six lithium-ion polymer cells in series, 14.9 V nominal, 3015 mAh capacity.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p1",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected C_p1x: 'Nordcell N6 series pack: six lithium-ion polymer cells in series, 33.3 V nominal, 6750 mAh capacity.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p2",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed C_p2",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p2",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "C_p2 -> 'Weight 429 g. Size 100 x 31 x 35 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p2",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "injected C_p2x: 'Weight 960 g. Size 225 x 69 x 78 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p3",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed C_p3",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p3",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "C_p3 -> 'Continuous discharge 10C (45.2 A), peak 20C for 3 s.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p3",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected C_p3x: 'Continuous discharge 22C (101.2 A), peak 45C for 8 s.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p4",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed C_p4",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p4",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "C_p4 -> 'Discharge temperature range −10 °C to 34 °C; charge between 0 °C and 27 °C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p4",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected C_p4x: 'Discharge temperature range −22 °C to 75 °C; charge between 0 °C and 60 °C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p5",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed C_p5",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p5",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "C_p5 -> 'Shipping documents: MSDS supplied with every order; UN38.3 testing has not been performed yet.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p5",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "injected C_p5x: 'Shipping documents: MSDS supplied with every order; UN38.3 testing has not been performed yet.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p6",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed C_p6",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p6",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "C_p6 -> 'Lifetime: 268 cycles to 54 % of initial capacity. Standard charge 1C (approximately 40 min).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p6",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected C_p6x: 'Lifetime: 600 cycles to 120 % of initial capacity. Standard charge 2C (approximately 90 min).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p7",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed C_p7",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p7",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "C_p7 -> 'Supplied with XT60 connector. Smart BMS with SMBus state-of-charge output.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p7",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "injected C_p7x: 'Supplied with XT60 connector. Smart BMS with SMBus state-of-charge output.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p8",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "removed C_p8",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p8",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "C_p8 -> 'Price: 153 EUR per unit, delivery in 2 weeks.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_C_p8",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected C_p8x: 'Price: 344 EUR per unit, delivery in 4 weeks.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p1",
+   "kind": "removal",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 6,
+   "mean_changed_checks": 2.0,
+   "description": "removed D_p1",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p1",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 2.0,
+   "description": "D_p1 -> 'Volta Lite: 4S, 14.9 V, 2680 mAh lithium-polymer pack optimised for weight.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_D_p1",
+   "kind": "injection",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 4,
+   "mean_changed_checks": 5.0,
+   "description": "injected D_p1x: 'Volta Lite: 9S, 33.3 V, 6000 mAh lithium-polymer pack optimised for weight.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p2",
+   "kind": "removal",
+   "n": 4,
+   "flips": 3,
+   "flip_rate": 0.75,
+   "p": 0.2167832167832168,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 8,
+   "mean_changed_checks": 2.0,
+   "description": "removed D_p2",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p2",
+   "kind": "alteration",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 4,
+   "mean_changed_checks": 5.5,
+   "description": "D_p2 -> 'Only 375 g! Dimensions 94 x 29 x 32 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p2",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected D_p2x: 'Only 840 g! Dimensions 210 x 66 x 72 mm.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p4",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed D_p4",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p4",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B",
+    "INVALID"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 1.0,
+   "description": "D_p4 -> 'Usable from −13 °C to 37 °C.'",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "ds_D_p4",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "injected D_p4x: 'Usable from −30 °C to 82 °C.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p5",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed D_p5",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p5",
+   "kind": "alteration",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 4,
+   "mean_changed_checks": 6.0,
+   "description": "D_p5 -> 'CE and RoHS compliant.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p5",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected D_p5x: 'CE and RoHS compliant.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p6",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 2.0,
+   "description": "removed D_p6",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p6",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "D_p6 -> '234 cycles to 54 % capacity; 1C charge capable (20 min).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p6",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected D_p6x: '525 cycles to 120 % capacity; 3C charge capable (45 min).'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p7",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 4.0,
+   "description": "removed D_p7",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p7",
+   "kind": "alteration",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 4,
+   "mean_changed_checks": 7.0,
+   "description": "D_p7 -> 'XT60 connector, no BMS telemetry, housing not rated.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p7",
+   "kind": "injection",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 6,
+   "mean_changed_checks": 8.0,
+   "description": "injected D_p7x: 'XT60 connector, no BMS telemetry, housing not rated.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p8",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 1.0,
+   "description": "removed D_p8",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p8",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "D_p8 -> 'Price 107 EUR.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "ds_D_p8",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "injected D_p8x: 'Price 238 EUR.'",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R01",
+   "kind": "removal",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "D",
+    "INVALID"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 1.0,
+   "description": "removed R01",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R01",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 2.0,
+   "description": "R01.value 90 -> 60",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R01",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 4.0,
+   "description": "injected R01X: energy_wh >= 135 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R02",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 1.0,
+   "description": "removed R02",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R02",
+   "kind": "alteration",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 5.333333333333333,
+   "description": "R02.value 800 -> 536",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R02",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 4.0,
+   "description": "injected R02X: mass_g <= 400 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R03",
+   "kind": "removal",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 25,
+   "mean_changed_checks": 5.4,
+   "description": "removed R03",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "req_R03",
+   "kind": "alteration",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B",
+    "INVALID"
+   ],
+   "calls": 25,
+   "mean_changed_checks": 1.0,
+   "description": "R03.value [-10, 45] -> [0, 45]",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "req_R03",
+   "kind": "injection",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 9.5,
+   "description": "injected R03X: operating_temp_c in_range [-23.8, 58.8] (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R04",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 1.0,
+   "description": "removed R04",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R04",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 3.0,
+   "description": "R04.value UN38.3 -> IEC 62133-2",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R04",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 5.0,
+   "description": "injected R04X: certifications includes IEC 62133-2 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R05",
+   "kind": "removal",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "D",
+    "INVALID"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 0.5,
+   "description": "removed R05",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R05",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 4.0,
+   "description": "R05.value 6 -> 4",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R05",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 5.0,
+   "description": "injected R05X: series_cells == 9 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R06",
+   "kind": "removal",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 6.666666666666667,
+   "description": "removed R06",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R06",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 2.0,
+   "description": "R06.value 40 -> 27",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R06",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 6.0,
+   "description": "injected R06X: continuous_current_a >= 60 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R07",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 1.0,
+   "description": "removed R07",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R07",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 2.0,
+   "description": "R07.value 300 -> 201",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R07",
+   "kind": "injection",
+   "n": 5,
+   "flips": 5,
+   "flip_rate": 1.0,
+   "p": 0.02797202797202797,
+   "decisions": [
+    "B"
+   ],
+   "calls": 25,
+   "mean_changed_checks": 6.0,
+   "description": "injected R07X: cycle_life >= 450 (critical)",
+   "curtailed": false,
+   "max_reps": 5,
+   "p_bh": 0.2904787520172135
+  },
+  {
+   "element": "req_R08",
+   "kind": "removal",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 4.0,
+   "description": "removed R08",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R08",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 4.0,
+   "description": "R08.value XT90 -> XT60",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R08",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 6.0,
+   "description": "injected R08X: connector includes XT60 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R09",
+   "kind": "removal",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 1.3333333333333333,
+   "description": "removed R09",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R09",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 2.0,
+   "description": "R09.value 90 -> 60",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R09",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 5.0,
+   "description": "injected R09X: charge_time_min <= 45 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R10",
+   "kind": "removal",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D",
+    "INVALID"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 3.6666666666666665,
+   "description": "removed R10",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R10",
+   "kind": "alteration",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 9.5,
+   "description": "R10.value 160 -> 107",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R10",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 6.0,
+   "description": "injected R10X: length_mm <= 80 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R11",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 1.0,
+   "description": "removed R11",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R11",
+   "kind": "alteration",
+   "n": 3,
+   "flips": 2,
+   "flip_rate": 0.6666666666666666,
+   "p": 0.36363636363636365,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 15,
+   "mean_changed_checks": 8.666666666666666,
+   "description": "R11.value smart_bms_soc_reporting -> self_heating",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R11",
+   "kind": "injection",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 5.0,
+   "description": "injected R11X: features includes self_heating (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R12",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 2.0,
+   "description": "removed R12",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R12",
+   "kind": "alteration",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 5,
+   "mean_changed_checks": 2.0,
+   "description": "R12.value 54 -> 36",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  },
+  {
+   "element": "req_R12",
+   "kind": "injection",
+   "n": 2,
+   "flips": 1,
+   "flip_rate": 0.5,
+   "p": 0.6181818181818182,
+   "decisions": [
+    "B",
+    "D"
+   ],
+   "calls": 10,
+   "mean_changed_checks": 5.5,
+   "description": "injected R12X: ip_rating >= 81 (critical)",
+   "curtailed": true,
+   "max_reps": 5,
+   "p_bh": 1.0
+  }
+ ],
+ "elements": {
+  "crit_K1": {
+   "element": "crit_K1",
+   "type": "criterion",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed K1"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "K1 -> lowest mass (g)"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected K1X before K1: longest cycle life"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": null
+  },
+  "crit_K2": {
+   "element": "crit_K2",
+   "type": "criterion",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed K2"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "K2 -> highest stored energy (Wh)"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected K2X before K2: shortest charge time"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": null
+  },
+  "ds_A_p1": {
+   "element": "ds_A_p1",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p1"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p1 -> 'The Helix pack is a lithium-polymer battery built from six cells in series (4S), nominal voltage 14.9 V, rated capacity 3484 mAh.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p1x: 'The Helix pack is a lithium-polymer battery built from six cells in series (9S), nominal voltage 33.3 V, rated capacity 7800 mAh.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p2": {
+   "element": "ds_A_p2",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p2"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p2 -> 'Weight 482 g including balance lead. Dimensions 104 x 32 x 34 mm.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p2x: 'Weight 1080 g including balance lead. Dimensions 232 x 72 x 75 mm.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p3": {
+   "element": "ds_A_p3",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p3"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p3 -> 'Discharge rating: 17C continuous, 34C burst for up to 7 s.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p3x: 'Discharge rating: 38C continuous, 75C burst for up to 15 s.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p4": {
+   "element": "ds_A_p4",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p4"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p4 -> 'Recommended operating temperature: 0 °C to 34 °C. Do not charge below 3 °C.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p4x: 'Recommended operating temperature: 0 °C to 75 °C. Do not charge below 8 °C.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p5": {
+   "element": "ds_A_p5",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p5"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p5 -> 'Transport: UN38.3 testing is still in progress; packs currently ship by road only.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p5x: 'Transport: UN38.3 testing is still in progress; packs currently ship by road only.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p6": {
+   "element": "ds_A_p6",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p6"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p6 -> 'Cycle life of at least 201 cycles to 54 % capacity at 1C/1C. Maximum charge rate 1C.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p6x: 'Cycle life of at least 450 cycles to 120 % capacity at 2C/2C. Maximum charge rate 2C.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p7": {
+   "element": "ds_A_p7",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p7"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p7 -> 'Output lead: silicone wire terminated with an XT90 connector.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p7x: 'Output lead: silicone wire terminated with an XT90 connector.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_A_p8": {
+   "element": "ds_A_p8",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed A_p8"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "A_p8 -> 'Unit price: 127 EUR (minimum order 7 units).'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected A_p8x: 'Unit price: 284 EUR (minimum order 15 units).'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "A"
+  },
+  "ds_B_p1": {
+   "element": "ds_B_p1",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p1"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "B_p1 -> 'Strata Pro: 4S1P configuration, 14.9 V nominal, 4020 mAh / 89 Wh.'"
+    },
+    "injection": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "injected B_p1x: 'Strata Pro: 9S1P configuration, 33.3 V nominal, 9000 mAh / 200 Wh.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": true,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p2": {
+   "element": "ds_B_p2",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p2"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "B_p2 -> 'Mass: 529 g. Length x width x height: 106 x 34 x 39 mm.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected B_p2x: 'Mass: 1185 g. Length x width x height: 237 x 75 x 87 mm.'"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 1.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p3": {
+   "element": "ds_B_p3",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p3"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "B_p3 -> 'Maximum continuous discharge current: 80 A.'"
+    },
+    "injection": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "injected B_p3x: 'Maximum continuous discharge current: 180 A.'"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": true,
+   "max_flip_rate": 1.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p4": {
+   "element": "ds_B_p4",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p4"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "B_p4 -> 'Operating range −13 °C to +40 °C (self-heating below 0 °C).'"
+    },
+    "injection": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "injected B_p4x: 'Operating range −30 °C to +90 °C (self-heating below 0 °C).'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": true,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p5": {
+   "element": "ds_B_p5",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p5"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "B_p5 -> 'Certifications: IEC 62133-2, CE.'"
+    },
+    "injection": {
+     "flips": 3,
+     "n": 4,
+     "flip_rate": 0.75,
+     "p": 0.2167832167832168,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "injected B_p5x: 'Certifications: IEC 62133-2, CE.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p6": {
+   "element": "ds_B_p6",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p6"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "B_p6 -> 'Rated for 335 cycles with at least 54 % remaining capacity. Supports 1C fast charge: full charge in about 20 min.'"
+    },
+    "injection": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "injected B_p6x: 'Rated for 750 cycles with at least 120 % remaining capacity. Supports 3C fast charge: full charge in about 45 min.'"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 1.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p7": {
+   "element": "ds_B_p7",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed B_p7"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "B_p7 -> 'Basic protection circuit without data interface; XT60 connector; enclosure not rated.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected B_p7x: 'Basic protection circuit without data interface; XT60 connector; enclosure not rated.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_B_p8": {
+   "element": "ds_B_p8",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "removed B_p8"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "B_p8 -> 'List price: 234 EUR per unit.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected B_p8x: 'List price: 524 EUR per unit.'"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 1.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "B"
+  },
+  "ds_C_p1": {
+   "element": "ds_C_p1",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p1"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p1 -> 'Nordcell N6 series pack: six lithium-ion polymer cells in series, 14.9 V nominal, 3015 mAh capacity.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p1x: 'Nordcell N6 series pack: six lithium-ion polymer cells in series, 33.3 V nominal, 6750 mAh capacity.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p2": {
+   "element": "ds_C_p2",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p2"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p2 -> 'Weight 429 g. Size 100 x 31 x 35 mm.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p2x: 'Weight 960 g. Size 225 x 69 x 78 mm.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p3": {
+   "element": "ds_C_p3",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p3"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p3 -> 'Continuous discharge 10C (45.2 A), peak 20C for 3 s.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p3x: 'Continuous discharge 22C (101.2 A), peak 45C for 8 s.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p4": {
+   "element": "ds_C_p4",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p4"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p4 -> 'Discharge temperature range −10 °C to 34 °C; charge between 0 °C and 27 °C.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p4x: 'Discharge temperature range −22 °C to 75 °C; charge between 0 °C and 60 °C.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p5": {
+   "element": "ds_C_p5",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p5"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p5 -> 'Shipping documents: MSDS supplied with every order; UN38.3 testing has not been performed yet.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p5x: 'Shipping documents: MSDS supplied with every order; UN38.3 testing has not been performed yet.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p6": {
+   "element": "ds_C_p6",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p6"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p6 -> 'Lifetime: 268 cycles to 54 % of initial capacity. Standard charge 1C (approximately 40 min).'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p6x: 'Lifetime: 600 cycles to 120 % of initial capacity. Standard charge 2C (approximately 90 min).'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p7": {
+   "element": "ds_C_p7",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p7"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p7 -> 'Supplied with XT60 connector. Smart BMS with SMBus state-of-charge output.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p7x: 'Supplied with XT60 connector. Smart BMS with SMBus state-of-charge output.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_C_p8": {
+   "element": "ds_C_p8",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed C_p8"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "C_p8 -> 'Price: 153 EUR per unit, delivery in 2 weeks.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected C_p8x: 'Price: 344 EUR per unit, delivery in 4 weeks.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "C"
+  },
+  "ds_D_p1": {
+   "element": "ds_D_p1",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "removed D_p1"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "D_p1 -> 'Volta Lite: 4S, 14.9 V, 2680 mAh lithium-polymer pack optimised for weight.'"
+    },
+    "injection": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "injected D_p1x: 'Volta Lite: 9S, 33.3 V, 6000 mAh lithium-polymer pack optimised for weight.'"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 1.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "ds_D_p2": {
+   "element": "ds_D_p2",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 3,
+     "n": 4,
+     "flip_rate": 0.75,
+     "p": 0.2167832167832168,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "removed D_p2"
+    },
+    "alteration": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "D_p2 -> 'Only 375 g! Dimensions 94 x 29 x 32 mm.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected D_p2x: 'Only 840 g! Dimensions 210 x 66 x 72 mm.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.75,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "ds_D_p4": {
+   "element": "ds_D_p4",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed D_p4"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B",
+      "INVALID"
+     ],
+     "description": "D_p4 -> 'Usable from −13 °C to 37 °C.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected D_p4x: 'Usable from −30 °C to 82 °C.'"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 1.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "ds_D_p5": {
+   "element": "ds_D_p5",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed D_p5"
+    },
+    "alteration": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "D_p5 -> 'CE and RoHS compliant.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected D_p5x: 'CE and RoHS compliant.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.5,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "ds_D_p6": {
+   "element": "ds_D_p6",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed D_p6"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "D_p6 -> '234 cycles to 54 % capacity; 1C charge capable (20 min).'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected D_p6x: '525 cycles to 120 % capacity; 3C charge capable (45 min).'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "ds_D_p7": {
+   "element": "ds_D_p7",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed D_p7"
+    },
+    "alteration": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "D_p7 -> 'XT60 connector, no BMS telemetry, housing not rated.'"
+    },
+    "injection": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "injected D_p7x: 'XT60 connector, no BMS telemetry, housing not rated.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.5,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "ds_D_p8": {
+   "element": "ds_D_p8",
+   "type": "datasheet_passage",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed D_p8"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "D_p8 -> 'Price 107 EUR.'"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected D_p8x: 'Price 238 EUR.'"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": null,
+   "critical": null,
+   "candidate": "D"
+  },
+  "req_R01": {
+   "element": "req_R01",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "D",
+      "INVALID"
+     ],
+     "description": "removed R01"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R01.value 90 -> 60"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R01X: energy_wh >= 135 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R01",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R02": {
+   "element": "req_R02",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed R02"
+    },
+    "alteration": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "R02.value 800 -> 536"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R02X: mass_g <= 400 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R02",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R03": {
+   "element": "req_R03",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "removed R03"
+    },
+    "alteration": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B",
+      "INVALID"
+     ],
+     "description": "R03.value [-10, 45] -> [0, 45]"
+    },
+    "injection": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "injected R03X: operating_temp_c in_range [-23.8, 58.8] (critical)"
+    }
+   },
+   "determinant": true,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 1.0,
+   "requirement": "R03",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R04": {
+   "element": "req_R04",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed R04"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R04.value UN38.3 -> IEC 62133-2"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R04X: certifications includes IEC 62133-2 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": "R04",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R05": {
+   "element": "req_R05",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "D",
+      "INVALID"
+     ],
+     "description": "removed R05"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R05.value 6 -> 4"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R05X: series_cells == 9 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.5,
+   "requirement": "R05",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R06": {
+   "element": "req_R06",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "removed R06"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R06.value 40 -> 27"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R06X: continuous_current_a >= 60 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R06",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R07": {
+   "element": "req_R07",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed R07"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R07.value 300 -> 201"
+    },
+    "injection": {
+     "flips": 5,
+     "n": 5,
+     "flip_rate": 1.0,
+     "p": 0.02797202797202797,
+     "p_bh": 0.2904787520172135,
+     "decisions": [
+      "B"
+     ],
+     "description": "injected R07X: cycle_life >= 450 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": true,
+   "max_flip_rate": 0.0,
+   "requirement": "R07",
+   "critical": false,
+   "candidate": null
+  },
+  "req_R08": {
+   "element": "req_R08",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "removed R08"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R08.value XT90 -> XT60"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R08X: connector includes XT60 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R08",
+   "critical": false,
+   "candidate": null
+  },
+  "req_R09": {
+   "element": "req_R09",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "removed R09"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R09.value 90 -> 60"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R09X: charge_time_min <= 45 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R09",
+   "critical": false,
+   "candidate": null
+  },
+  "req_R10": {
+   "element": "req_R10",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D",
+      "INVALID"
+     ],
+     "description": "removed R10"
+    },
+    "alteration": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "R10.value 160 -> 107"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R10X: length_mm <= 80 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R10",
+   "critical": true,
+   "candidate": null
+  },
+  "req_R11": {
+   "element": "req_R11",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed R11"
+    },
+    "alteration": {
+     "flips": 2,
+     "n": 3,
+     "flip_rate": 0.6666666666666666,
+     "p": 0.36363636363636365,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "R11.value smart_bms_soc_reporting -> self_heating"
+    },
+    "injection": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "injected R11X: features includes self_heating (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.6666666666666666,
+   "requirement": "R11",
+   "critical": false,
+   "candidate": null
+  },
+  "req_R12": {
+   "element": "req_R12",
+   "type": "requirement",
+   "kinds": {
+    "removal": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "removed R12"
+    },
+    "alteration": {
+     "flips": 0,
+     "n": 1,
+     "flip_rate": 0.0,
+     "p": 1.0,
+     "p_bh": 1.0,
+     "decisions": [
+      "D"
+     ],
+     "description": "R12.value 54 -> 36"
+    },
+    "injection": {
+     "flips": 1,
+     "n": 2,
+     "flip_rate": 0.5,
+     "p": 0.6181818181818182,
+     "p_bh": 1.0,
+     "decisions": [
+      "B",
+      "D"
+     ],
+     "description": "injected R12X: ip_rating >= 81 (critical)"
+    }
+   },
+   "determinant": false,
+   "determinant_bh": false,
+   "injection_sensitive": false,
+   "max_flip_rate": 0.0,
+   "requirement": "R12",
+   "critical": false,
+   "candidate": null
+  }
+ },
+ "determinant": [
+  "ds_B_p2",
+  "ds_B_p3",
+  "ds_B_p6",
+  "ds_B_p8",
+  "ds_D_p1",
+  "ds_D_p4",
+  "req_R03"
+ ],
+ "determinant_bh": [],
+ "injection_sensitive": [
+  "ds_B_p1",
+  "ds_B_p3",
+  "ds_B_p4",
+  "req_R07"
+ ],
+ "probe_uncited": [
+  {
+   "element": "ds_A_p9",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "removed A_p9",
+   "curtailed": true,
+   "max_reps": 5
+  },
+  {
+   "element": "ds_C_p9",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "removed C_p9",
+   "curtailed": true,
+   "max_reps": 5
+  },
+  {
+   "element": "ds_D_p3",
+   "kind": "removal",
+   "n": 1,
+   "flips": 0,
+   "flip_rate": 0.0,
+   "p": 1.0,
+   "decisions": [
+    "D"
+   ],
+   "calls": 2,
+   "mean_changed_checks": 0.0,
+   "description": "removed D_p3",
+   "curtailed": true,
+   "max_reps": 5
+  }
+ ],
+ "probe_uncited_determinant": [],
+ "calls": {
+  "logical": 634,
+  "logical_decider": 221,
+  "logical_checker": 413
+ },
+ "calls_probe": {
+  "logical": 6,
+  "logical_checker": 3,
+  "logical_decider": 3
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "candidates": [
+    {
+      "id": "A",
+      "name": "Helix 6S 5200",
+      "passages": [
+        {"id": "A_p1", "text": "The Helix pack is a lithium-polymer battery built from six cells in series (6S), nominal voltage 22.2 V, rated capacity 5200 mAh.", "facts": {"cells_series": 6, "capacity_wh": 115.4}},
+        {"id": "A_p2", "text": "Weight 720 g including balance lead. Dimensions 155 x 48 x 50 mm.", "facts": {"mass_g": 720, "length_mm": 155}},
+        {"id": "A_p3", "text": "Discharge rating: 25C continuous, 50C burst for up to 10 s.", "facts": {"continuous_discharge_a": 130}},
+        {"id": "A_p4", "text": "Recommended operating temperature: 0 °C to 50 °C. Do not charge below 5 °C.", "facts": {"operating_temp_c": [0, 50]}},
+        {"id": "A_p5", "text": "Transport: UN38.3 test summary available on request; packs ship at 30 % state of charge.", "facts": {"certifications": ["UN38.3"]},
+         "alt_text": "Transport: UN38.3 testing is still in progress; packs currently ship by road only.", "alt_facts": {"certifications": []}},
+        {"id": "A_p6", "text": "Cycle life of at least 300 cycles to 80 % capacity at 1C/1C. Maximum charge rate 1C.", "facts": {"cycle_life": 300, "charge_time_min": 60}},
+        {"id": "A_p7", "text": "Output lead: 10 AWG silicone wire terminated with an XT60 connector.", "facts": {"connector": "XT60"},
+         "alt_text": "Output lead: silicone wire terminated with an XT90 connector.", "alt_facts": {"connector": "XT90"}},
+        {"id": "A_p8", "text": "Unit price: 189 EUR (minimum order 10 units).", "facts": {"price_eur": 189}},
+        {"id": "A_p9", "text": "Helix packs are hand-assembled in our ISO 9001 certified facility and come with a limited warranty.", "facts": {}}
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Strata 6S 6000 Pro",
+      "passages": [
+        {"id": "B_p1", "text": "Strata Pro: 6S1P configuration, 22.2 V nominal, 6000 mAh / 133 Wh.", "facts": {"cells_series": 6, "capacity_wh": 133}},
+        {"id": "B_p2", "text": "Mass: 790 g. Length x width x height: 158 x 50 x 58 mm.", "facts": {"mass_g": 790, "length_mm": 158}},
+        {"id": "B_p3", "text": "Maximum continuous discharge current: 120 A.", "facts": {"continuous_discharge_a": 120}},
+        {"id": "B_p4", "text": "Operating range −20 °C to +60 °C (self-heating below 0 °C).", "facts": {"operating_temp_c": [-20, 60]}},
+        {"id": "B_p5", "text": "Certifications: UN38.3, IEC 62133-2, CE.", "facts": {"certifications": ["UN38.3", "IEC 62133-2", "CE"]},
+         "alt_text": "Certifications: IEC 62133-2, CE.", "alt_facts": {"certifications": ["IEC 62133-2", "CE"]}},
+        {"id": "B_p6", "text": "Rated for 500 cycles with at least 80 % remaining capacity. Supports 2C fast charge: full charge in about 30 min.", "facts": {"cycle_life": 500, "charge_time_min": 30}},
+        {"id": "B_p7", "text": "Integrated smart BMS with SMBus state-of-charge reporting; XT90-S anti-spark connector; IP54 enclosure.", "facts": {"features": ["smart_bms"], "connector": "XT90", "ip_rating": 54},
+         "alt_text": "Basic protection circuit without data interface; XT60 connector; enclosure not rated.", "alt_facts": {"features": [], "connector": "XT60", "ip_rating": 0}},
+        {"id": "B_p8", "text": "List price: 349 EUR per unit.", "facts": {"price_eur": 349}}
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Nordcell N6-4500",
+      "passages": [
+        {"id": "C_p1", "text": "Nordcell N6 series pack: six lithium-ion polymer cells in series, 22.2 V nominal, 4500 mAh capacity.", "facts": {"cells_series": 6, "capacity_wh": 99.9}},
+        {"id": "C_p2", "text": "Weight 640 g. Size 150 x 46 x 52 mm.", "facts": {"mass_g": 640, "length_mm": 150}},
+        {"id": "C_p3", "text": "Continuous discharge 15C (67.5 A), peak 30C for 5 s.", "facts": {"continuous_discharge_a": 67.5}},
+        {"id": "C_p4", "text": "Discharge temperature range −15 °C to 50 °C; charge between 0 °C and 40 °C.", "facts": {"operating_temp_c": [-15, 50]}},
+        {"id": "C_p5", "text": "Shipping documents: UN38.3 test summary and MSDS supplied with every order. Energy below 100 Wh, so no dangerous-goods exemption is needed for air freight.", "facts": {"certifications": ["UN38.3"]},
+         "alt_text": "Shipping documents: MSDS supplied with every order; UN38.3 testing has not been performed yet.", "alt_facts": {"certifications": []}},
+        {"id": "C_p6", "text": "Lifetime: 400 cycles to 80 % of initial capacity. Standard charge 1C (approximately 60 min).", "facts": {"cycle_life": 400, "charge_time_min": 60}},
+        {"id": "C_p7", "text": "Supplied with XT90 connector and 8 AWG leads. Simple protection board without communication interface.", "facts": {"connector": "XT90", "features": []},
+         "alt_text": "Supplied with XT60 connector. Smart BMS with SMBus state-of-charge output.", "alt_facts": {"connector": "XT60", "features": ["smart_bms"]}},
+        {"id": "C_p8", "text": "Price: 229 EUR per unit, delivery in 3 weeks.", "facts": {"price_eur": 229}},
+        {"id": "C_p9", "text": "Nordcell is a Scandinavian start-up; all packs are designed in Gothenburg.", "facts": {}}
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Volta Lite 6S 4000",
+      "passages": [
+        {"id": "D_p1", "text": "Volta Lite: 6S, 22.2 V, 4000 mAh lithium-polymer pack optimised for weight.", "facts": {"cells_series": 6, "capacity_wh": 88.8}},
+        {"id": "D_p2", "text": "Only 560 g! Dimensions 140 x 44 x 48 mm.", "facts": {"mass_g": 560, "length_mm": 140}},
+        {"id": "D_p3", "text": "30C continuous discharge rating.", "facts": {"continuous_discharge_a": 120}},
+        {"id": "D_p4", "text": "Usable from −20 °C to 55 °C.", "facts": {"operating_temp_c": [-20, 55]}},
+        {"id": "D_p5", "text": "UN38.3 tested. CE and RoHS compliant.", "facts": {"certifications": ["UN38.3", "CE", "RoHS"]},
+         "alt_text": "CE and RoHS compliant.", "alt_facts": {"certifications": ["CE", "RoHS"]}},
+        {"id": "D_p6", "text": "350 cycles to 80 % capacity; 2C charge capable (30 min).", "facts": {"cycle_life": 350, "charge_time_min": 30}},
+        {"id": "D_p7", "text": "XT90 connector, smart BMS with state-of-charge telemetry, splash-proof IP54 housing.", "facts": {"connector": "XT90", "features": ["smart_bms"], "ip_rating": 54},
+         "alt_text": "XT60 connector, no BMS telemetry, housing not rated.", "alt_facts": {"connector": "XT60", "features": [], "ip_rating": 0}},
+        {"id": "D_p8", "text": "Price 159 EUR.", "facts": {"price_eur": 159}}
+      ]
+    }
+  ]
+}

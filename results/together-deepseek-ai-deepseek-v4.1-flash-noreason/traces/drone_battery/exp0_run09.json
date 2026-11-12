@@ -1,0 +1,1213 @@
+{
+ "scenario": "drone_battery",
+ "run_id": "exp0|drone_battery|9",
+ "model": "together/deepseek-ai/DeepSeek-V4.1-Flash",
+ "inputs": {
+  "spec_passages": [
+   {
+    "id": "S01",
+    "text": "Context. The IV-3 is a quadcopter used by our field teams to inspect wind-turbine blades and overhead power lines. The current battery supplier is discontinuing its product line, so a replacement pack must be selected from the shortlisted catalogue. This document lists what the replacement must, or preferably should, achieve. Requirements stated with \"shall\" or \"must\", or whose violation makes the pack unusable, are mandatory. Recommendations (\"should\", \"preferably\", \"desirable\", \"would be appreciated\") do not by themselves disqualify a candidate.",
+    "label": null
+   },
+   {
+    "id": "S02",
+    "text": "[R01] A typical inspection mission consists of 30 minutes of hovering and slow translation, during which the propulsion system and payload draw 180 W on average. The pack shall store enough energy to complete such a mission without landing. Reserve margins are handled by the flight controller and are not part of this requirement.",
+    "label": "R01"
+   },
+   {
+    "id": "S03",
+    "text": "[R02] With the payload installed, the airframe is 800 g below its maximum take-off mass. Whatever pack is chosen must not consume more than this margin.",
+    "label": "R02"
+   },
+   {
+    "id": "S04",
+    "text": "[R03] Missions are flown all year round. The pack shall deliver its rated performance at ambient temperatures from −10 °C (winter inspections) up to 45 °C (summer, in direct sun on the tarmac).",
+    "label": "R03"
+   },
+   {
+    "id": "S05",
+    "text": "[R04] Packs are shipped to field teams by air freight. A UN38.3 test summary is a precondition for the acceptance of any lithium battery by our logistics department.",
+    "label": "R04"
+   },
+   {
+    "id": "S06",
+    "text": "[R05] The electronic speed controllers and the power distribution board are rated for six lithium cells in series. Any other series configuration cannot be used.",
+    "label": "R05"
+   },
+   {
+    "id": "S07",
+    "text": "[R06] During climb and gust rejection the motors draw up to 40 A in total, sustained for more than a minute. The pack shall support this current continuously.",
+    "label": "R06"
+   },
+   {
+    "id": "S08",
+    "text": "[R07] To keep the cost of ownership acceptable, the pack should still provide 80 % of its initial capacity after at least 300 full charge–discharge cycles.",
+    "label": "R07"
+   },
+   {
+    "id": "S09",
+    "text": "[R08] The existing harness ends in an XT90 plug. Delivery with a matching connector would avoid re-soldering and is therefore preferred.",
+    "label": "R08"
+   },
+   {
+    "id": "S10",
+    "text": "[R09] Field teams carry a single charger. It is desirable that a pack can be fully recharged within 90 minutes, so that two packs can be rotated during a working day.",
+    "label": "R09"
+   },
+   {
+    "id": "S11",
+    "text": "[R10] The battery bay accepts packs up to 160 mm long; width and height are not limiting for any 6S pack in the catalogue. Longer packs cannot be mounted.",
+    "label": "R10"
+   },
+   {
+    "id": "S12",
+    "text": "[R11] A smart battery-management system that reports the state of charge to the flight controller would be appreciated.",
+    "label": "R11"
+   },
+   {
+    "id": "S13",
+    "text": "[R12] Inspections are occasionally interrupted by light rain. Preferably, the pack enclosure should be rated at least IP54.",
+    "label": "R12"
+   },
+   {
+    "id": "S14",
+    "text": "Selection. Among the candidates that satisfy every mandatory requirement, the purchasing department selects the one with the lowest unit price; if two candidates have the same price, the lighter one is chosen.",
+    "label": null
+   },
+   {
+    "id": "S15",
+    "text": "Out of scope. Charger compatibility, storage conditions and end-of-life recycling are covered by separate documents.",
+    "label": null
+   }
+  ],
+  "datasheets": {
+   "A": {
+    "name": "Helix 6S 5200",
+    "passages": [
+     {
+      "id": "A_p1",
+      "text": "The Helix pack is a lithium-polymer battery built from six cells in series (6S), nominal voltage 22.2 V, rated capacity 5200 mAh.",
+      "facts": {
+       "cells_series": 6,
+       "capacity_wh": 115.4
+      }
+     },
+     {
+      "id": "A_p2",
+      "text": "Weight 720 g including balance lead. Dimensions 155 x 48 x 50 mm.",
+      "facts": {
+       "mass_g": 720,
+       "length_mm": 155
+      }
+     },
+     {
+      "id": "A_p3",
+      "text": "Discharge rating: 25C continuous, 50C burst for up to 10 s.",
+      "facts": {
+       "continuous_discharge_a": 130
+      }
+     },
+     {
+      "id": "A_p4",
+      "text": "Recommended operating temperature: 0 °C to 50 °C. Do not charge below 5 °C.",
+      "facts": {
+       "operating_temp_c": [
+        0,
+        50
+       ]
+      }
+     },
+     {
+      "id": "A_p5",
+      "text": "Transport: UN38.3 test summary available on request; packs ship at 30 % state of charge.",
+      "facts": {
+       "certifications": [
+        "UN38.3"
+       ]
+      },
+      "alt_text": "Transport: UN38.3 testing is still in progress; packs currently ship by road only.",
+      "alt_facts": {
+       "certifications": []
+      }
+     },
+     {
+      "id": "A_p6",
+      "text": "Cycle life of at least 300 cycles to 80 % capacity at 1C/1C. Maximum charge rate 1C.",
+      "facts": {
+       "cycle_life": 300,
+       "charge_time_min": 60
+      }
+     },
+     {
+      "id": "A_p7",
+      "text": "Output lead: 10 AWG silicone wire terminated with an XT60 connector.",
+      "facts": {
+       "connector": "XT60"
+      },
+      "alt_text": "Output lead: silicone wire terminated with an XT90 connector.",
+      "alt_facts": {
+       "connector": "XT90"
+      }
+     },
+     {
+      "id": "A_p8",
+      "text": "Unit price: 189 EUR (minimum order 10 units).",
+      "facts": {
+       "price_eur": 189
+      }
+     },
+     {
+      "id": "A_p9",
+      "text": "Helix packs are hand-assembled in our ISO 9001 certified facility and come with a limited warranty.",
+      "facts": {}
+     }
+    ]
+   },
+   "B": {
+    "name": "Strata 6S 6000 Pro",
+    "passages": [
+     {
+      "id": "B_p1",
+      "text": "Strata Pro: 6S1P configuration, 22.2 V nominal, 6000 mAh / 133 Wh.",
+      "facts": {
+       "cells_series": 6,
+       "capacity_wh": 133
+      }
+     },
+     {
+      "id": "B_p2",
+      "text": "Mass: 790 g. Length x width x height: 158 x 50 x 58 mm.",
+      "facts": {
+       "mass_g": 790,
+       "length_mm": 158
+      }
+     },
+     {
+      "id": "B_p3",
+      "text": "Maximum continuous discharge current: 120 A.",
+      "facts": {
+       "continuous_discharge_a": 120
+      }
+     },
+     {
+      "id": "B_p4",
+      "text": "Operating range −20 °C to +60 °C (self-heating below 0 °C).",
+      "facts": {
+       "operating_temp_c": [
+        -20,
+        60
+       ]
+      }
+     },
+     {
+      "id": "B_p5",
+      "text": "Certifications: UN38.3, IEC 62133-2, CE.",
+      "facts": {
+       "certifications": [
+        "UN38.3",
+        "IEC 62133-2",
+        "CE"
+       ]
+      },
+      "alt_text": "Certifications: IEC 62133-2, CE.",
+      "alt_facts": {
+       "certifications": [
+        "IEC 62133-2",
+        "CE"
+       ]
+      }
+     },
+     {
+      "id": "B_p6",
+      "text": "Rated for 500 cycles with at least 80 % remaining capacity. Supports 2C fast charge: full charge in about 30 min.",
+      "facts": {
+       "cycle_life": 500,
+       "charge_time_min": 30
+      }
+     },
+     {
+      "id": "B_p7",
+      "text": "Integrated smart BMS with SMBus state-of-charge reporting; XT90-S anti-spark connector; IP54 enclosure.",
+      "facts": {
+       "features": [
+        "smart_bms"
+       ],
+       "connector": "XT90",
+       "ip_rating": 54
+      },
+      "alt_text": "Basic protection circuit without data interface; XT60 connector; enclosure not rated.",
+      "alt_facts": {
+       "features": [],
+       "connector": "XT60",
+       "ip_rating": 0
+      }
+     },
+     {
+      "id": "B_p8",
+      "text": "List price: 349 EUR per unit.",
+      "facts": {
+       "price_eur": 349
+      }
+     }
+    ]
+   },
+   "C": {
+    "name": "Nordcell N6-4500",
+    "passages": [
+     {
+      "id": "C_p1",
+      "text": "Nordcell N6 series pack: six lithium-ion polymer cells in series, 22.2 V nominal, 4500 mAh capacity.",
+      "facts": {
+       "cells_series": 6,
+       "capacity_wh": 99.9
+      }
+     },
+     {
+      "id": "C_p2",
+      "text": "Weight 640 g. Size 150 x 46 x 52 mm.",
+      "facts": {
+       "mass_g": 640,
+       "length_mm": 150
+      }
+     },
+     {
+      "id": "C_p3",
+      "text": "Continuous discharge 15C (67.5 A), peak 30C for 5 s.",
+      "facts": {
+       "continuous_discharge_a": 67.5
+      }
+     },
+     {
+      "id": "C_p4",
+      "text": "Discharge temperature range −15 °C to 50 °C; charge between 0 °C and 40 °C.",
+      "facts": {
+       "operating_temp_c": [
+        -15,
+        50
+       ]
+      }
+     },
+     {
+      "id": "C_p5",
+      "text": "Shipping documents: UN38.3 test summary and MSDS supplied with every order. Energy below 100 Wh, so no dangerous-goods exemption is needed for air freight.",
+      "facts": {
+       "certifications": [
+        "UN38.3"
+       ]
+      },
+      "alt_text": "Shipping documents: MSDS supplied with every order; UN38.3 testing has not been performed yet.",
+      "alt_facts": {
+       "certifications": []
+      }
+     },
+     {
+      "id": "C_p6",
+      "text": "Lifetime: 400 cycles to 80 % of initial capacity. Standard charge 1C (approximately 60 min).",
+      "facts": {
+       "cycle_life": 400,
+       "charge_time_min": 60
+      }
+     },
+     {
+      "id": "C_p7",
+      "text": "Supplied with XT90 connector and 8 AWG leads. Simple protection board without communication interface.",
+      "facts": {
+       "connector": "XT90",
+       "features": []
+      },
+      "alt_text": "Supplied with XT60 connector. Smart BMS with SMBus state-of-charge output.",
+      "alt_facts": {
+       "connector": "XT60",
+       "features": [
+        "smart_bms"
+       ]
+      }
+     },
+     {
+      "id": "C_p8",
+      "text": "Price: 229 EUR per unit, delivery in 3 weeks.",
+      "facts": {
+       "price_eur": 229
+      }
+     },
+     {
+      "id": "C_p9",
+      "text": "Nordcell is a Scandinavian start-up; all packs are designed in Gothenburg.",
+      "facts": {}
+     }
+    ]
+   },
+   "D": {
+    "name": "Volta Lite 6S 4000",
+    "passages": [
+     {
+      "id": "D_p1",
+      "text": "Volta Lite: 6S, 22.2 V, 4000 mAh lithium-polymer pack optimised for weight.",
+      "facts": {
+       "cells_series": 6,
+       "capacity_wh": 88.8
+      }
+     },
+     {
+      "id": "D_p2",
+      "text": "Only 560 g! Dimensions 140 x 44 x 48 mm.",
+      "facts": {
+       "mass_g": 560,
+       "length_mm": 140
+      }
+     },
+     {
+      "id": "D_p3",
+      "text": "30C continuous discharge rating.",
+      "facts": {
+       "continuous_discharge_a": 120
+      }
+     },
+     {
+      "id": "D_p4",
+      "text": "Usable from −20 °C to 55 °C.",
+      "facts": {
+       "operating_temp_c": [
+        -20,
+        55
+       ]
+      }
+     },
+     {
+      "id": "D_p5",
+      "text": "UN38.3 tested. CE and RoHS compliant.",
+      "facts": {
+       "certifications": [
+        "UN38.3",
+        "CE",
+        "RoHS"
+       ]
+      },
+      "alt_text": "CE and RoHS compliant.",
+      "alt_facts": {
+       "certifications": [
+        "CE",
+        "RoHS"
+       ]
+      }
+     },
+     {
+      "id": "D_p6",
+      "text": "350 cycles to 80 % capacity; 2C charge capable (30 min).",
+      "facts": {
+       "cycle_life": 350,
+       "charge_time_min": 30
+      }
+     },
+     {
+      "id": "D_p7",
+      "text": "XT90 connector, smart BMS with state-of-charge telemetry, splash-proof IP54 housing.",
+      "facts": {
+       "connector": "XT90",
+       "features": [
+        "smart_bms"
+       ],
+       "ip_rating": 54
+      },
+      "alt_text": "XT60 connector, no BMS telemetry, housing not rated.",
+      "alt_facts": {
+       "connector": "XT60",
+       "features": [],
+       "ip_rating": 0
+      }
+     },
+     {
+      "id": "D_p8",
+      "text": "Price 159 EUR.",
+      "facts": {
+       "price_eur": 159
+      }
+     }
+    ]
+   }
+  },
+  "criteria": [
+   {
+    "id": "K1",
+    "text": "lowest unit price (EUR)",
+    "attribute": "price_eur",
+    "direction": "min",
+    "alt": {
+     "text": "lowest mass (g)",
+     "attribute": "mass_g",
+     "direction": "min"
+    },
+    "inject": {
+     "id": "K1X",
+     "text": "longest cycle life",
+     "attribute": "cycle_life",
+     "direction": "max"
+    }
+   },
+   {
+    "id": "K2",
+    "text": "lowest mass (g)",
+    "attribute": "mass_g",
+    "direction": "min",
+    "alt": {
+     "text": "highest stored energy (Wh)",
+     "attribute": "capacity_wh",
+     "direction": "max"
+    },
+    "inject": {
+     "id": "K2X",
+     "text": "shortest charge time",
+     "attribute": "charge_time_min",
+     "direction": "min"
+    }
+   }
+  ]
+ },
+ "requirements": [
+  {
+   "id": "R01",
+   "attribute": "energy_wh",
+   "operator": ">=",
+   "value": 90,
+   "unit": "Wh",
+   "critical": true,
+   "source_passage": "S02"
+  },
+  {
+   "id": "R02",
+   "attribute": "mass_g",
+   "operator": "<=",
+   "value": 800,
+   "unit": "g",
+   "critical": true,
+   "source_passage": "S03"
+  },
+  {
+   "id": "R03",
+   "attribute": "operating_temp_c",
+   "operator": "in_range",
+   "value": [
+    -10,
+    45
+   ],
+   "unit": "°C",
+   "critical": true,
+   "source_passage": "S04"
+  },
+  {
+   "id": "R04",
+   "attribute": "certifications",
+   "operator": "includes",
+   "value": "UN38.3",
+   "unit": "",
+   "critical": true,
+   "source_passage": "S05"
+  },
+  {
+   "id": "R05",
+   "attribute": "series_cells",
+   "operator": "==",
+   "value": 6,
+   "unit": "cells",
+   "critical": true,
+   "source_passage": "S06"
+  },
+  {
+   "id": "R06",
+   "attribute": "continuous_current_a",
+   "operator": ">=",
+   "value": 40,
+   "unit": "A",
+   "critical": true,
+   "source_passage": "S07"
+  },
+  {
+   "id": "R07",
+   "attribute": "cycle_life",
+   "operator": ">=",
+   "value": 300,
+   "unit": "cycles",
+   "critical": false,
+   "source_passage": "S08"
+  },
+  {
+   "id": "R08",
+   "attribute": "connector",
+   "operator": "includes",
+   "value": "XT90",
+   "unit": "",
+   "critical": false,
+   "source_passage": "S09"
+  },
+  {
+   "id": "R09",
+   "attribute": "charge_time_min",
+   "operator": "<=",
+   "value": 90,
+   "unit": "min",
+   "critical": false,
+   "source_passage": "S10"
+  },
+  {
+   "id": "R10",
+   "attribute": "length_mm",
+   "operator": "<=",
+   "value": 160,
+   "unit": "mm",
+   "critical": true,
+   "source_passage": "S11"
+  },
+  {
+   "id": "R11",
+   "attribute": "features",
+   "operator": "includes",
+   "value": "smart_bms_soc_reporting",
+   "unit": "",
+   "critical": false,
+   "source_passage": "S12"
+  },
+  {
+   "id": "R12",
+   "attribute": "ip_rating",
+   "operator": ">=",
+   "value": 54,
+   "unit": "IP",
+   "critical": false,
+   "source_passage": "S13"
+  }
+ ],
+ "checks": {
+  "A": {
+   "R01": {
+    "verdict": "pass",
+    "passages": [
+     "A_p1"
+    ],
+    "evidence": "Nominal voltage 22.2 V and rated capacity 5200 mAh give 22.2 x 5200 / 1000 = 115.44 Wh, which is >= 90 Wh."
+   },
+   "R02": {
+    "verdict": "pass",
+    "passages": [
+     "A_p2"
+    ],
+    "evidence": "Weight is 720 g including balance lead, which is <= 800 g."
+   },
+   "R03": {
+    "verdict": "fail",
+    "passages": [
+     "A_p4"
+    ],
+    "evidence": "Recommended operating temperature is 0 °C to 50 °C, which does not cover the required -10 °C to 45 °C range."
+   },
+   "R04": {
+    "verdict": "pass",
+    "passages": [
+     "A_p5"
+    ],
+    "evidence": "UN38.3 test summary is available on request, so the pack includes UN38.3 certification."
+   },
+   "R05": {
+    "verdict": "pass",
+    "passages": [
+     "A_p1"
+    ],
+    "evidence": "The pack is built from six cells in series (6S)."
+   },
+   "R06": {
+    "verdict": "pass",
+    "passages": [
+     "A_p1",
+     "A_p3"
+    ],
+    "evidence": "25C continuous on 5200 mAh gives 5.2 A x 25 = 130 A, which is >= 40 A."
+   },
+   "R07": {
+    "verdict": "pass",
+    "passages": [
+     "A_p6"
+    ],
+    "evidence": "Cycle life is at least 300 cycles to 80 % capacity, which is >= 300 cycles."
+   },
+   "R08": {
+    "verdict": "fail",
+    "passages": [
+     "A_p7"
+    ],
+    "evidence": "Output lead is terminated with an XT60 connector, not XT90."
+   },
+   "R09": {
+    "verdict": "unknown",
+    "passages": [],
+    "evidence": "The datasheet gives maximum charge rate 1C but no charge time in minutes."
+   },
+   "R10": {
+    "verdict": "pass",
+    "passages": [
+     "A_p2"
+    ],
+    "evidence": "Length is 155 mm, which is <= 160 mm."
+   },
+   "R11": {
+    "verdict": "unknown",
+    "passages": [],
+    "evidence": "The datasheet does not mention smart BMS or SOC reporting."
+   },
+   "R12": {
+    "verdict": "unknown",
+    "passages": [],
+    "evidence": "The datasheet does not state any IP rating."
+   }
+  },
+  "B": {
+   "R01": {
+    "verdict": "pass",
+    "passages": [
+     "B_p1"
+    ],
+    "evidence": "Energy is 133 Wh, which is >= 90 Wh."
+   },
+   "R02": {
+    "verdict": "pass",
+    "passages": [
+     "B_p2"
+    ],
+    "evidence": "Mass is 790 g, which is <= 800 g."
+   },
+   "R03": {
+    "verdict": "fail",
+    "passages": [
+     "B_p4"
+    ],
+    "evidence": "Operating range is -20 °C to +60 °C, which does not cover the required -10 °C to 45 °C because it extends below -10 °C."
+   },
+   "R04": {
+    "verdict": "pass",
+    "passages": [
+     "B_p5"
+    ],
+    "evidence": "Certifications explicitly include UN38.3."
+   },
+   "R05": {
+    "verdict": "pass",
+    "passages": [
+     "B_p1"
+    ],
+    "evidence": "Configuration is 6S1P, i.e. 6 series cells."
+   },
+   "R06": {
+    "verdict": "pass",
+    "passages": [
+     "B_p3"
+    ],
+    "evidence": "Maximum continuous discharge current is 120 A, which is >= 40 A."
+   },
+   "R07": {
+    "verdict": "pass",
+    "passages": [
+     "B_p6"
+    ],
+    "evidence": "Rated for 500 cycles, which is >= 300 cycles."
+   },
+   "R08": {
+    "verdict": "pass",
+    "passages": [
+     "B_p7"
+    ],
+    "evidence": "Connector is XT90-S, which includes XT90."
+   },
+   "R09": {
+    "verdict": "pass",
+    "passages": [
+     "B_p6"
+    ],
+    "evidence": "2C fast charge gives full charge in about 30 min, which is <= 90 min."
+   },
+   "R10": {
+    "verdict": "pass",
+    "passages": [
+     "B_p2"
+    ],
+    "evidence": "Length is 158 mm, which is <= 160 mm."
+   },
+   "R11": {
+    "verdict": "pass",
+    "passages": [
+     "B_p7"
+    ],
+    "evidence": "Integrated smart BMS with SMBus state-of-charge reporting satisfies smart_bms_soc_reporting."
+   },
+   "R12": {
+    "verdict": "pass",
+    "passages": [
+     "B_p7"
+    ],
+    "evidence": "IP54 enclosure rating is >= IP54."
+   }
+  },
+  "C": {
+   "R01": {
+    "verdict": "pass",
+    "passages": [
+     "C_p1"
+    ],
+    "evidence": "22.2 V nominal × 4500 mAh = 99.9 Wh, which is ≥ 90 Wh."
+   },
+   "R02": {
+    "verdict": "pass",
+    "passages": [
+     "C_p2"
+    ],
+    "evidence": "Weight is 640 g, which is ≤ 800 g."
+   },
+   "R03": {
+    "verdict": "fail",
+    "passages": [
+     "C_p4"
+    ],
+    "evidence": "Discharge range is −15 °C to 50 °C but charge range is only 0 °C to 40 °C, so the required −10 °C to 45 °C operating range is not fully covered."
+   },
+   "R04": {
+    "verdict": "pass",
+    "passages": [
+     "C_p5"
+    ],
+    "evidence": "UN38.3 test summary is supplied with every order."
+   },
+   "R05": {
+    "verdict": "pass",
+    "passages": [
+     "C_p1"
+    ],
+    "evidence": "The pack has six lithium-ion polymer cells in series."
+   },
+   "R06": {
+    "verdict": "pass",
+    "passages": [
+     "C_p3"
+    ],
+    "evidence": "Continuous discharge is 15C (67.5 A), which is ≥ 40 A."
+   },
+   "R07": {
+    "verdict": "pass",
+    "passages": [
+     "C_p6"
+    ],
+    "evidence": "Lifetime is 400 cycles to 80 % of initial capacity, which is ≥ 300 cycles."
+   },
+   "R08": {
+    "verdict": "pass",
+    "passages": [
+     "C_p7"
+    ],
+    "evidence": "Supplied with XT90 connector."
+   },
+   "R09": {
+    "verdict": "pass",
+    "passages": [
+     "C_p6"
+    ],
+    "evidence": "Standard charge 1C takes approximately 60 min, which is ≤ 90 min."
+   },
+   "R10": {
+    "verdict": "pass",
+    "passages": [
+     "C_p2"
+    ],
+    "evidence": "Size is 150 x 46 x 52 mm, so length is 150 mm, which is ≤ 160 mm."
+   },
+   "R11": {
+    "verdict": "fail",
+    "passages": [
+     "C_p7"
+    ],
+    "evidence": "Protection board is simple without communication interface, so smart BMS SOC reporting is not present."
+   },
+   "R12": {
+    "verdict": "unknown",
+    "passages": [],
+    "evidence": "No IP rating is stated in the datasheet."
+   }
+  },
+  "D": {
+   "R01": {
+    "verdict": "pass",
+    "passages": [
+     "D_p1"
+    ],
+    "evidence": "Energy = 4000 mAh × 22.2 V / 1000 = 88.8 Wh, which is below 90 Wh."
+   },
+   "R02": {
+    "verdict": "pass",
+    "passages": [
+     "D_p2"
+    ],
+    "evidence": "Mass is 560 g, which is ≤ 800 g."
+   },
+   "R03": {
+    "verdict": "pass",
+    "passages": [
+     "D_p4"
+    ],
+    "evidence": "Usable range −20 °C to 55 °C fully covers the required −10 °C to 45 °C."
+   },
+   "R04": {
+    "verdict": "pass",
+    "passages": [
+     "D_p5"
+    ],
+    "evidence": "UN38.3 tested is explicitly stated."
+   },
+   "R05": {
+    "verdict": "pass",
+    "passages": [
+     "D_p1"
+    ],
+    "evidence": "The pack is 6S, i.e. 6 series cells."
+   },
+   "R06": {
+    "verdict": "unknown",
+    "passages": [],
+    "evidence": "The datasheet gives a 30C rating but no capacity-based current calculation is provided to derive continuous current in A."
+   },
+   "R07": {
+    "verdict": "pass",
+    "passages": [
+     "D_p6"
+    ],
+    "evidence": "350 cycles to 80 % capacity is ≥ 300 cycles."
+   },
+   "R08": {
+    "verdict": "pass",
+    "passages": [
+     "D_p7"
+    ],
+    "evidence": "XT90 connector is explicitly stated."
+   },
+   "R09": {
+    "verdict": "pass",
+    "passages": [
+     "D_p6"
+    ],
+    "evidence": "2C charge capable (30 min) is ≤ 90 min."
+   },
+   "R10": {
+    "verdict": "pass",
+    "passages": [
+     "D_p2"
+    ],
+    "evidence": "Length is 140 mm, which is ≤ 160 mm."
+   },
+   "R11": {
+    "verdict": "pass",
+    "passages": [
+     "D_p7"
+    ],
+    "evidence": "Smart BMS with state-of-charge telemetry is explicitly stated."
+   },
+   "R12": {
+    "verdict": "pass",
+    "passages": [
+     "D_p7"
+    ],
+    "evidence": "IP54 housing is ≥ IP54."
+   }
+  }
+ },
+ "decision": {
+  "selected": "D",
+  "justification": "Candidate D is the only candidate that passes all critical requirements, including R03 (operating_temp_c in_range [-10, 45] °C), while A, B, and C all fail R03. Candidate D's R06 is unknown, but the selection policy permits it because no candidate passes all critical requirements, and D has the fewest critical failures (one unknown versus one fail each for A, B, and C). Among the remaining candidates, D also wins on the comparison criteria: it has the lowest unit price at 159 EUR (K1) and the lowest mass at 560 g (K2). Therefore D is selected despite the unresolved R06.",
+  "cited": [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  "cited_listed": [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  "cited_in_text": [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ]
+ },
+ "activities": {
+  "extractor": {
+   "agent": "extractor",
+   "used": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15"
+   ],
+   "generated": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12"
+   ]
+  },
+  "checker_A": {
+   "agent": "checker",
+   "candidate": "A",
+   "used": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "A_p1",
+    "A_p2",
+    "A_p3",
+    "A_p4",
+    "A_p5",
+    "A_p6",
+    "A_p7",
+    "A_p8",
+    "A_p9"
+   ],
+   "generated": [
+    "R01@A",
+    "R02@A",
+    "R03@A",
+    "R04@A",
+    "R05@A",
+    "R06@A",
+    "R07@A",
+    "R08@A",
+    "R09@A",
+    "R10@A",
+    "R11@A",
+    "R12@A"
+   ]
+  },
+  "checker_B": {
+   "agent": "checker",
+   "candidate": "B",
+   "used": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "B_p1",
+    "B_p2",
+    "B_p3",
+    "B_p4",
+    "B_p5",
+    "B_p6",
+    "B_p7",
+    "B_p8"
+   ],
+   "generated": [
+    "R01@B",
+    "R02@B",
+    "R03@B",
+    "R04@B",
+    "R05@B",
+    "R06@B",
+    "R07@B",
+    "R08@B",
+    "R09@B",
+    "R10@B",
+    "R11@B",
+    "R12@B"
+   ]
+  },
+  "checker_C": {
+   "agent": "checker",
+   "candidate": "C",
+   "used": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "C_p1",
+    "C_p2",
+    "C_p3",
+    "C_p4",
+    "C_p5",
+    "C_p6",
+    "C_p7",
+    "C_p8",
+    "C_p9"
+   ],
+   "generated": [
+    "R01@C",
+    "R02@C",
+    "R03@C",
+    "R04@C",
+    "R05@C",
+    "R06@C",
+    "R07@C",
+    "R08@C",
+    "R09@C",
+    "R10@C",
+    "R11@C",
+    "R12@C"
+   ]
+  },
+  "checker_D": {
+   "agent": "checker",
+   "candidate": "D",
+   "used": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "D_p1",
+    "D_p2",
+    "D_p3",
+    "D_p4",
+    "D_p5",
+    "D_p6",
+    "D_p7",
+    "D_p8"
+   ],
+   "generated": [
+    "R01@D",
+    "R02@D",
+    "R03@D",
+    "R04@D",
+    "R05@D",
+    "R06@D",
+    "R07@D",
+    "R08@D",
+    "R09@D",
+    "R10@D",
+    "R11@D",
+    "R12@D"
+   ]
+  },
+  "decider": {
+   "agent": "decider",
+   "used": [
+    "R01@A",
+    "R02@A",
+    "R03@A",
+    "R04@A",
+    "R05@A",
+    "R06@A",
+    "R07@A",
+    "R08@A",
+    "R09@A",
+    "R10@A",
+    "R11@A",
+    "R12@A",
+    "R01@B",
+    "R02@B",
+    "R03@B",
+    "R04@B",
+    "R05@B",
+    "R06@B",
+    "R07@B",
+    "R08@B",
+    "R09@B",
+    "R10@B",
+    "R11@B",
+    "R12@B",
+    "R01@C",
+    "R02@C",
+    "R03@C",
+    "R04@C",
+    "R05@C",
+    "R06@C",
+    "R07@C",
+    "R08@C",
+    "R09@C",
+    "R10@C",
+    "R11@C",
+    "R12@C",
+    "R01@D",
+    "R02@D",
+    "R03@D",
+    "R04@D",
+    "R05@D",
+    "R06@D",
+    "R07@D",
+    "R08@D",
+    "R09@D",
+    "R10@D",
+    "R11@D",
+    "R12@D",
+    "K1",
+    "K2",
+    "A_p2",
+    "A_p8",
+    "B_p2",
+    "B_p8",
+    "C_p2",
+    "C_p8",
+    "D_p2",
+    "D_p8"
+   ],
+   "generated": [
+    "decision"
+   ],
+   "routed_passages": [
+    "A_p2",
+    "A_p8",
+    "B_p2",
+    "B_p8",
+    "C_p2",
+    "C_p8",
+    "D_p2",
+    "D_p8"
+   ]
+  }
+ },
+ "reused_activities": []
+}

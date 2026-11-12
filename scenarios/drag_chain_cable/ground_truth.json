@@ -1,0 +1,29 @@
+{
+  "scenario": "drag_chain_cable",
+  "title": "Power cable for a robot drag chain",
+  "correct_candidate": "C",
+  "requirements": [
+    {"id": "R01", "attribute": "rated_current_a", "operator": ">=", "value": 10, "unit": "A", "critical": true, "note": "derating at 40 °C (indirect)"},
+    {"id": "R02", "attribute": "flex_cycles", "operator": ">=", "value": 5000000, "unit": "cycles", "critical": true},
+    {"id": "R03", "attribute": "min_bend_radius_mm", "operator": "<=", "value": 75, "unit": "mm", "critical": true, "note": "datasheets give k x d (indirect)"},
+    {"id": "R04", "attribute": "rated_voltage_v", "operator": ">=", "value": 600, "unit": "V", "critical": true, "note": "criticality implicit"},
+    {"id": "R05", "attribute": "flex_temp_c", "operator": "in_range", "value": [-5, 70], "unit": "°C", "critical": true, "alt_value": [-5, 60]},
+    {"id": "R06", "attribute": "features", "operator": "includes", "value": "halogen_free", "unit": "", "critical": true, "alt_value": "oil_resistant", "note": "criticality implicit ('mandatory' by regulation)"},
+    {"id": "R07", "attribute": "features", "operator": "includes", "value": "oil_resistant", "unit": "", "critical": false, "alt_value": "halogen_free"},
+    {"id": "R08", "attribute": "outer_diameter_mm", "operator": "<=", "value": 11, "unit": "mm", "critical": false},
+    {"id": "R09", "attribute": "certifications", "operator": "includes", "value": "UL", "unit": "", "critical": false, "alt_value": "CSA"},
+    {"id": "R10", "attribute": "colour", "operator": "==", "value": "orange", "unit": "", "critical": false, "alt_value": "grey"}
+  ],
+  "injected_errors": [
+    {"id": "E1", "target": "requirement", "element": "R03", "field": "value", "new_value": 70, "critical": true,
+     "description": "Bending radius limit mis-extracted as 70 mm instead of 75 mm."},
+    {"id": "E2", "target": "datasheet_passage", "element": "C_p6", "critical": true, "requirement": "R06",
+     "new_text": "Black PVC outer sheath.", "new_facts": {"features": [], "colour": "black"},
+     "description": "Sheath material of the correct candidate corrupted (halogen-free TPE -> PVC)."},
+    {"id": "E3", "target": "requirement", "element": "R08", "field": "value", "new_value": 10, "critical": false,
+     "description": "Outer-diameter preference mis-extracted as 10 mm."},
+    {"id": "E4", "target": "datasheet_passage", "element": "C_p7", "critical": false, "requirement": "R09",
+     "new_text": "Approvals: CE.", "new_facts": {"certifications": ["CE"]},
+     "description": "UL approval dropped from the correct candidate's datasheet."}
+  ]
+}

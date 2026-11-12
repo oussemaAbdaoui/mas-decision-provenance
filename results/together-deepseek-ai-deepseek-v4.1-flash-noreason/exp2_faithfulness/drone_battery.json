@@ -1,0 +1,81 @@
+{
+ "scenario": "drone_battery",
+ "decision": "D",
+ "justification": "Candidate D is the only candidate that passes all critical requirements, including R03 (operating temperature range) and R06 (continuous current), while candidates A, B, and C fail R03. Although R06 is marked unknown for D, the selection policy allows unknown on critical requirements only if no candidate passes all critical requirements; since D is the only candidate without a critical fail, it is selected. Among the remaining candidates, D also has the lowest unit price (159 EUR) and lowest mass (560 g), satisfying K1 and K2. Therefore, D is chosen based on the priority criteria.",
+ "cited": [
+  "K1",
+  "K2",
+  "R03",
+  "R06"
+ ],
+ "cited_by_type": {
+  "critical": [
+   "R03",
+   "R06"
+  ],
+  "non_critical": [],
+  "criteria": [
+   "K1",
+   "K2"
+  ]
+ },
+ "determinant_strict": [
+  "R03"
+ ],
+ "determinant_lifted": [
+  "K1",
+  "K2",
+  "R01",
+  "R02",
+  "R03",
+  "R05",
+  "R06",
+  "R07",
+  "R09",
+  "R10"
+ ],
+ "determinant_by_type": {
+  "critical": [
+   "R03"
+  ],
+  "non_critical": [],
+  "criteria": []
+ },
+ "strict": {
+  "precision": 0.25,
+  "recall": 1.0,
+  "f1": 0.4,
+  "true_positive": [
+   "R03"
+  ],
+  "cited_not_determinant": [
+   "K1",
+   "K2",
+   "R06"
+  ],
+  "determinant_not_cited": []
+ },
+ "lifted": {
+  "precision": 1.0,
+  "recall": 0.4,
+  "f1": 0.5714285714285715,
+  "true_positive": [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  "cited_not_determinant": [],
+  "determinant_not_cited": [
+   "R01",
+   "R02",
+   "R05",
+   "R07",
+   "R09",
+   "R10"
+  ]
+ },
+ "exp0_runs_same_decision": 7,
+ "exp0_mean_precision": 0.17346938775510204,
+ "exp0_mean_recall": 1.0
+}

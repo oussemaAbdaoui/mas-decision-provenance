@@ -1,0 +1,58 @@
+{
+ "scenario": "drone_battery",
+ "errors": [
+  {
+   "error": "E1",
+   "element": "req_R01",
+   "requirement_node": "req_R01",
+   "critical": true,
+   "description": "Energy threshold extracted with the wrong power figure (220 W instead of 180 W): 110 Wh instead of 90 Wh.",
+   "faulty_decisions": [
+    "D",
+    "D",
+    "D",
+    "B",
+    "D"
+   ],
+   "faulty_decision": "D",
+   "reference_decision": "D",
+   "correct_candidate": "C",
+   "consequential": false,
+   "detected_exact": false,
+   "detected_requirement": false,
+   "detected_grouped": null,
+   "determinant_set": [
+    "req_R12"
+   ],
+   "determinant_set_size": 1,
+   "elements_tested": 14,
+   "flip_rate_rank": 2,
+   "localisation_calls": 147,
+   "grouped_calls": 0,
+   "faulty_justification": "Candidate D is the only candidate that passes all critical requirements, including R03 (operating temperature range) and R06 (continuous current), while candidates A and B fail R03 and candidate C fails R01 and R03. Although R06 is marked unknown for D, the selection policy states that a candidate with an unknown critical result must not be selected unless no candidate passes all critical requirements; since no candidate passes all critical requirements, we prefer the candidate with the fewest critical failures. D has only one unknown critical result (R06), whereas A and B each have one critical failure (R03) and C has two critical failures (R01 and R03), so D has the fewest critical issues. Among the remaining candidates, applying the comparison criteria in priority order, D has the lowest unit price (159 EUR, satisfying K1) and the lowest mass (560 g, satisfying K2). Therefore, D is selected.",
+   "faulty_cited": [
+    "K1",
+    "K2",
+    "R01",
+    "R03",
+    "R06"
+   ],
+   "justification_cites_it": true
+  },
+  {
+   "error": "E2",
+   "skipped": true,
+   "reason": "budget reached"
+  },
+  {
+   "error": "E3",
+   "skipped": true,
+   "reason": "budget reached"
+  }
+ ],
+ "calls": {
+  "logical": 268,
+  "logical_checker": 209,
+  "logical_decider": 59
+ }
+}

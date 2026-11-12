@@ -1,0 +1,3761 @@
+{
+ "graph": {
+  "scenario": "drone_battery",
+  "run_id": "exp0|drone_battery|0",
+  "model": "together/deepseek-ai/DeepSeek-V4.1-Flash"
+ },
+ "nodes": [
+  {
+   "id": "act_extractor",
+   "type": "activity",
+   "activity_id": "extractor",
+   "run": "exp0|drone_battery|0",
+   "agent": "extractor",
+   "used": [
+    "spec_S01",
+    "spec_S02",
+    "spec_S03",
+    "spec_S04",
+    "spec_S05",
+    "spec_S06",
+    "spec_S07",
+    "spec_S08",
+    "spec_S09",
+    "spec_S10",
+    "spec_S11",
+    "spec_S12",
+    "spec_S13",
+    "spec_S14",
+    "spec_S15"
+   ],
+   "generated": [
+    "req_R01",
+    "req_R02",
+    "req_R03",
+    "req_R04",
+    "req_R05",
+    "req_R06",
+    "req_R07",
+    "req_R08",
+    "req_R09",
+    "req_R10",
+    "req_R11",
+    "req_R12"
+   ]
+  },
+  {
+   "id": "spec_S01",
+   "type": "spec_passage",
+   "text": "Context. The IV-3 is a quadcopter used by our field teams to inspect wind-turbine blades and overhead power lines. The current battery supplier is discontinuing its product line, so a replacement pack must be selected from the shortlisted catalogue. This document lists what the replacement must, or preferably should, achieve. Requirements stated with \"shall\" or \"must\", or whose violation makes the pack unusable, are mandatory. Recommendations (\"should\", \"preferably\", \"desirable\", \"would be appreciated\") do not by themselves disqualify a candidate.",
+   "label": null,
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S02",
+   "type": "spec_passage",
+   "text": "[R01] A typical inspection mission consists of 30 minutes of hovering and slow translation, during which the propulsion system and payload draw 180 W on average. The pack shall store enough energy to complete such a mission without landing. Reserve margins are handled by the flight controller and are not part of this requirement.",
+   "label": "R01",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S03",
+   "type": "spec_passage",
+   "text": "[R02] With the payload installed, the airframe is 800 g below its maximum take-off mass. Whatever pack is chosen must not consume more than this margin.",
+   "label": "R02",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S04",
+   "type": "spec_passage",
+   "text": "[R03] Missions are flown all year round. The pack shall deliver its rated performance at ambient temperatures from −10 °C (winter inspections) up to 45 °C (summer, in direct sun on the tarmac).",
+   "label": "R03",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S05",
+   "type": "spec_passage",
+   "text": "[R04] Packs are shipped to field teams by air freight. A UN38.3 test summary is a precondition for the acceptance of any lithium battery by our logistics department.",
+   "label": "R04",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S06",
+   "type": "spec_passage",
+   "text": "[R05] The electronic speed controllers and the power distribution board are rated for six lithium cells in series. Any other series configuration cannot be used.",
+   "label": "R05",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S07",
+   "type": "spec_passage",
+   "text": "[R06] During climb and gust rejection the motors draw up to 40 A in total, sustained for more than a minute. The pack shall support this current continuously.",
+   "label": "R06",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S08",
+   "type": "spec_passage",
+   "text": "[R07] To keep the cost of ownership acceptable, the pack should still provide 80 % of its initial capacity after at least 300 full charge–discharge cycles.",
+   "label": "R07",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S09",
+   "type": "spec_passage",
+   "text": "[R08] The existing harness ends in an XT90 plug. Delivery with a matching connector would avoid re-soldering and is therefore preferred.",
+   "label": "R08",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S10",
+   "type": "spec_passage",
+   "text": "[R09] Field teams carry a single charger. It is desirable that a pack can be fully recharged within 90 minutes, so that two packs can be rotated during a working day.",
+   "label": "R09",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S11",
+   "type": "spec_passage",
+   "text": "[R10] The battery bay accepts packs up to 160 mm long; width and height are not limiting for any 6S pack in the catalogue. Longer packs cannot be mounted.",
+   "label": "R10",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S12",
+   "type": "spec_passage",
+   "text": "[R11] A smart battery-management system that reports the state of charge to the flight controller would be appreciated.",
+   "label": "R11",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S13",
+   "type": "spec_passage",
+   "text": "[R12] Inspections are occasionally interrupted by light rain. Preferably, the pack enclosure should be rated at least IP54.",
+   "label": "R12",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S14",
+   "type": "spec_passage",
+   "text": "Selection. Among the candidates that satisfy every mandatory requirement, the purchasing department selects the one with the lowest unit price; if two candidates have the same price, the lighter one is chosen.",
+   "label": null,
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "spec_S15",
+   "type": "spec_passage",
+   "text": "Out of scope. Charger compatibility, storage conditions and end-of-life recycling are covered by separate documents.",
+   "label": null,
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "req_R01",
+   "type": "requirement",
+   "requirement": "R01",
+   "attribute": "energy_wh",
+   "operator": ">=",
+   "value": 90,
+   "unit": "Wh",
+   "critical": true,
+   "source_passage": "S02",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S02"
+   ]
+  },
+  {
+   "id": "req_R02",
+   "type": "requirement",
+   "requirement": "R02",
+   "attribute": "mass_g",
+   "operator": "<=",
+   "value": 800,
+   "unit": "g",
+   "critical": true,
+   "source_passage": "S03",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S03"
+   ]
+  },
+  {
+   "id": "req_R03",
+   "type": "requirement",
+   "requirement": "R03",
+   "attribute": "operating_temp_c",
+   "operator": "in_range",
+   "value": [
+    -10,
+    45
+   ],
+   "unit": "°C",
+   "critical": true,
+   "source_passage": "S04",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S04"
+   ]
+  },
+  {
+   "id": "req_R04",
+   "type": "requirement",
+   "requirement": "R04",
+   "attribute": "certifications",
+   "operator": "includes",
+   "value": "UN38.3",
+   "unit": "",
+   "critical": true,
+   "source_passage": "S05",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S05"
+   ]
+  },
+  {
+   "id": "req_R05",
+   "type": "requirement",
+   "requirement": "R05",
+   "attribute": "series_cells",
+   "operator": "==",
+   "value": 6,
+   "unit": "cells",
+   "critical": true,
+   "source_passage": "S06",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S06"
+   ]
+  },
+  {
+   "id": "req_R06",
+   "type": "requirement",
+   "requirement": "R06",
+   "attribute": "continuous_current_a",
+   "operator": ">=",
+   "value": 40,
+   "unit": "A",
+   "critical": true,
+   "source_passage": "S07",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S07"
+   ]
+  },
+  {
+   "id": "req_R07",
+   "type": "requirement",
+   "requirement": "R07",
+   "attribute": "cycle_life",
+   "operator": ">=",
+   "value": 300,
+   "unit": "cycles",
+   "critical": false,
+   "source_passage": "S08",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S08"
+   ]
+  },
+  {
+   "id": "req_R08",
+   "type": "requirement",
+   "requirement": "R08",
+   "attribute": "connector",
+   "operator": "includes",
+   "value": "XT90",
+   "unit": "",
+   "critical": false,
+   "source_passage": "S09",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S09"
+   ]
+  },
+  {
+   "id": "req_R09",
+   "type": "requirement",
+   "requirement": "R09",
+   "attribute": "charge_time_min",
+   "operator": "<=",
+   "value": 90,
+   "unit": "min",
+   "critical": false,
+   "source_passage": "S10",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S10"
+   ]
+  },
+  {
+   "id": "req_R10",
+   "type": "requirement",
+   "requirement": "R10",
+   "attribute": "length_mm",
+   "operator": "<=",
+   "value": 160,
+   "unit": "mm",
+   "critical": true,
+   "source_passage": "S11",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S11"
+   ]
+  },
+  {
+   "id": "req_R11",
+   "type": "requirement",
+   "requirement": "R11",
+   "attribute": "features",
+   "operator": "includes",
+   "value": "smart_bms_soc_reporting",
+   "unit": "",
+   "critical": false,
+   "source_passage": "S12",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S12"
+   ]
+  },
+  {
+   "id": "req_R12",
+   "type": "requirement",
+   "requirement": "R12",
+   "attribute": "ip_rating",
+   "operator": ">=",
+   "value": 54,
+   "unit": "IP",
+   "critical": false,
+   "source_passage": "S13",
+   "generated_by": "act_extractor",
+   "used": [
+    "spec_S13"
+   ]
+  },
+  {
+   "id": "act_checker_A",
+   "type": "activity",
+   "activity_id": "checker_A",
+   "run": "exp0|drone_battery|0",
+   "agent": "checker",
+   "candidate": "A",
+   "used": [
+    "ds_A_p1",
+    "ds_A_p2",
+    "ds_A_p3",
+    "ds_A_p4",
+    "ds_A_p5",
+    "ds_A_p6",
+    "ds_A_p7",
+    "ds_A_p8",
+    "ds_A_p9",
+    "req_R01",
+    "req_R02",
+    "req_R03",
+    "req_R04",
+    "req_R05",
+    "req_R06",
+    "req_R07",
+    "req_R08",
+    "req_R09",
+    "req_R10",
+    "req_R11",
+    "req_R12"
+   ],
+   "generated": [
+    "chk_R01_candA",
+    "chk_R02_candA",
+    "chk_R03_candA",
+    "chk_R04_candA",
+    "chk_R05_candA",
+    "chk_R06_candA",
+    "chk_R07_candA",
+    "chk_R08_candA",
+    "chk_R09_candA",
+    "chk_R10_candA",
+    "chk_R11_candA",
+    "chk_R12_candA"
+   ]
+  },
+  {
+   "id": "ds_A_p1",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "The Helix pack is a lithium-polymer battery built from six cells in series (6S), nominal voltage 22.2 V, rated capacity 5200 mAh.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p2",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Weight 720 g including balance lead. Dimensions 155 x 48 x 50 mm.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p3",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Discharge rating: 25C continuous, 50C burst for up to 10 s.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p4",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Recommended operating temperature: 0 °C to 50 °C. Do not charge below 5 °C.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p5",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Transport: UN38.3 test summary available on request; packs ship at 30 % state of charge.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p6",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Cycle life of at least 300 cycles to 80 % capacity at 1C/1C. Maximum charge rate 1C.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p7",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Output lead: 10 AWG silicone wire terminated with an XT60 connector.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p8",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Unit price: 189 EUR (minimum order 10 units).",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_A_p9",
+   "type": "datasheet_passage",
+   "candidate": "A",
+   "text": "Helix packs are hand-assembled in our ISO 9001 certified facility and come with a limited warranty.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "chk_R01_candA",
+   "type": "check_result",
+   "requirement": "R01",
+   "candidate": "A",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Nominal voltage 22.2 V and rated capacity 5200 mAh give 22.2 x 5200 / 1000 = 115.44 Wh, which is >= 90 Wh.",
+   "cited_passages": [
+    "A_p1"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p1",
+    "req_R01"
+   ]
+  },
+  {
+   "id": "chk_R02_candA",
+   "type": "check_result",
+   "requirement": "R02",
+   "candidate": "A",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Weight is 720 g including balance lead, which is <= 800 g.",
+   "cited_passages": [
+    "A_p2"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p2",
+    "req_R02"
+   ]
+  },
+  {
+   "id": "chk_R03_candA",
+   "type": "check_result",
+   "requirement": "R03",
+   "candidate": "A",
+   "critical": true,
+   "value": "fail",
+   "evidence": "Recommended operating temperature is 0 °C to 50 °C, which does not cover the required -10 °C to 45 °C range.",
+   "cited_passages": [
+    "A_p4"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p4",
+    "req_R03"
+   ]
+  },
+  {
+   "id": "chk_R04_candA",
+   "type": "check_result",
+   "requirement": "R04",
+   "candidate": "A",
+   "critical": true,
+   "value": "pass",
+   "evidence": "UN38.3 test summary is available on request, so the pack includes UN38.3 certification.",
+   "cited_passages": [
+    "A_p5"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p5",
+    "req_R04"
+   ]
+  },
+  {
+   "id": "chk_R05_candA",
+   "type": "check_result",
+   "requirement": "R05",
+   "candidate": "A",
+   "critical": true,
+   "value": "pass",
+   "evidence": "The pack is built from six cells in series (6S).",
+   "cited_passages": [
+    "A_p1"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p1",
+    "req_R05"
+   ]
+  },
+  {
+   "id": "chk_R06_candA",
+   "type": "check_result",
+   "requirement": "R06",
+   "candidate": "A",
+   "critical": true,
+   "value": "pass",
+   "evidence": "25C continuous on 5200 mAh gives 5.2 A x 25 = 130 A, which is >= 40 A.",
+   "cited_passages": [
+    "A_p1",
+    "A_p3"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p1",
+    "ds_A_p3",
+    "req_R06"
+   ]
+  },
+  {
+   "id": "chk_R07_candA",
+   "type": "check_result",
+   "requirement": "R07",
+   "candidate": "A",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Cycle life is at least 300 cycles to 80 % capacity, which is >= 300 cycles.",
+   "cited_passages": [
+    "A_p6"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p6",
+    "req_R07"
+   ]
+  },
+  {
+   "id": "chk_R08_candA",
+   "type": "check_result",
+   "requirement": "R08",
+   "candidate": "A",
+   "critical": false,
+   "value": "fail",
+   "evidence": "Output lead is terminated with an XT60 connector, not XT90.",
+   "cited_passages": [
+    "A_p7"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p7",
+    "req_R08"
+   ]
+  },
+  {
+   "id": "chk_R09_candA",
+   "type": "check_result",
+   "requirement": "R09",
+   "candidate": "A",
+   "critical": false,
+   "value": "unknown",
+   "evidence": "The datasheet gives maximum charge rate 1C but no charge time in minutes.",
+   "cited_passages": [],
+   "generated_by": "act_checker_A",
+   "used": [
+    "req_R09"
+   ]
+  },
+  {
+   "id": "chk_R10_candA",
+   "type": "check_result",
+   "requirement": "R10",
+   "candidate": "A",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Length is 155 mm, which is <= 160 mm.",
+   "cited_passages": [
+    "A_p2"
+   ],
+   "generated_by": "act_checker_A",
+   "used": [
+    "ds_A_p2",
+    "req_R10"
+   ]
+  },
+  {
+   "id": "chk_R11_candA",
+   "type": "check_result",
+   "requirement": "R11",
+   "candidate": "A",
+   "critical": false,
+   "value": "unknown",
+   "evidence": "The datasheet does not mention a smart BMS or SOC reporting feature.",
+   "cited_passages": [],
+   "generated_by": "act_checker_A",
+   "used": [
+    "req_R11"
+   ]
+  },
+  {
+   "id": "chk_R12_candA",
+   "type": "check_result",
+   "requirement": "R12",
+   "candidate": "A",
+   "critical": false,
+   "value": "unknown",
+   "evidence": "The datasheet does not state any IP rating.",
+   "cited_passages": [],
+   "generated_by": "act_checker_A",
+   "used": [
+    "req_R12"
+   ]
+  },
+  {
+   "id": "act_checker_B",
+   "type": "activity",
+   "activity_id": "checker_B",
+   "run": "exp0|drone_battery|0",
+   "agent": "checker",
+   "candidate": "B",
+   "used": [
+    "ds_B_p1",
+    "ds_B_p2",
+    "ds_B_p3",
+    "ds_B_p4",
+    "ds_B_p5",
+    "ds_B_p6",
+    "ds_B_p7",
+    "ds_B_p8",
+    "req_R01",
+    "req_R02",
+    "req_R03",
+    "req_R04",
+    "req_R05",
+    "req_R06",
+    "req_R07",
+    "req_R08",
+    "req_R09",
+    "req_R10",
+    "req_R11",
+    "req_R12"
+   ],
+   "generated": [
+    "chk_R01_candB",
+    "chk_R02_candB",
+    "chk_R03_candB",
+    "chk_R04_candB",
+    "chk_R05_candB",
+    "chk_R06_candB",
+    "chk_R07_candB",
+    "chk_R08_candB",
+    "chk_R09_candB",
+    "chk_R10_candB",
+    "chk_R11_candB",
+    "chk_R12_candB"
+   ]
+  },
+  {
+   "id": "ds_B_p1",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Strata Pro: 6S1P configuration, 22.2 V nominal, 6000 mAh / 133 Wh.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p2",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Mass: 790 g. Length x width x height: 158 x 50 x 58 mm.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p3",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Maximum continuous discharge current: 120 A.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p4",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Operating range −20 °C to +60 °C (self-heating below 0 °C).",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p5",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Certifications: UN38.3, IEC 62133-2, CE.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p6",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Rated for 500 cycles with at least 80 % remaining capacity. Supports 2C fast charge: full charge in about 30 min.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p7",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "Integrated smart BMS with SMBus state-of-charge reporting; XT90-S anti-spark connector; IP54 enclosure.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_B_p8",
+   "type": "datasheet_passage",
+   "candidate": "B",
+   "text": "List price: 349 EUR per unit.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "chk_R01_candB",
+   "type": "check_result",
+   "requirement": "R01",
+   "candidate": "B",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Energy is 133 Wh, which is >= 90 Wh.",
+   "cited_passages": [
+    "B_p1"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p1",
+    "req_R01"
+   ]
+  },
+  {
+   "id": "chk_R02_candB",
+   "type": "check_result",
+   "requirement": "R02",
+   "candidate": "B",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Mass is 790 g, which is <= 800 g.",
+   "cited_passages": [
+    "B_p2"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p2",
+    "req_R02"
+   ]
+  },
+  {
+   "id": "chk_R03_candB",
+   "type": "check_result",
+   "requirement": "R03",
+   "candidate": "B",
+   "critical": true,
+   "value": "fail",
+   "evidence": "Operating range is -20 °C to +60 °C, which does not cover the required -10 °C to +45 °C because it extends below -10 °C.",
+   "cited_passages": [
+    "B_p4"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p4",
+    "req_R03"
+   ]
+  },
+  {
+   "id": "chk_R04_candB",
+   "type": "check_result",
+   "requirement": "R04",
+   "candidate": "B",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Certifications explicitly include UN38.3.",
+   "cited_passages": [
+    "B_p5"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p5",
+    "req_R04"
+   ]
+  },
+  {
+   "id": "chk_R05_candB",
+   "type": "check_result",
+   "requirement": "R05",
+   "candidate": "B",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Configuration is 6S1P, i.e. 6 series cells.",
+   "cited_passages": [
+    "B_p1"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p1",
+    "req_R05"
+   ]
+  },
+  {
+   "id": "chk_R06_candB",
+   "type": "check_result",
+   "requirement": "R06",
+   "candidate": "B",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Maximum continuous discharge current is 120 A, which is >= 40 A.",
+   "cited_passages": [
+    "B_p3"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p3",
+    "req_R06"
+   ]
+  },
+  {
+   "id": "chk_R07_candB",
+   "type": "check_result",
+   "requirement": "R07",
+   "candidate": "B",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Rated for 500 cycles, which is >= 300 cycles.",
+   "cited_passages": [
+    "B_p6"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p6",
+    "req_R07"
+   ]
+  },
+  {
+   "id": "chk_R08_candB",
+   "type": "check_result",
+   "requirement": "R08",
+   "candidate": "B",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Connector is XT90-S, which includes XT90.",
+   "cited_passages": [
+    "B_p7"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p7",
+    "req_R08"
+   ]
+  },
+  {
+   "id": "chk_R09_candB",
+   "type": "check_result",
+   "requirement": "R09",
+   "candidate": "B",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Full charge in about 30 min, which is <= 90 min.",
+   "cited_passages": [
+    "B_p6"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p6",
+    "req_R09"
+   ]
+  },
+  {
+   "id": "chk_R10_candB",
+   "type": "check_result",
+   "requirement": "R10",
+   "candidate": "B",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Length is 158 mm, which is <= 160 mm.",
+   "cited_passages": [
+    "B_p2"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p2",
+    "req_R10"
+   ]
+  },
+  {
+   "id": "chk_R11_candB",
+   "type": "check_result",
+   "requirement": "R11",
+   "candidate": "B",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Integrated smart BMS with SMBus state-of-charge reporting satisfies smart_bms_soc_reporting.",
+   "cited_passages": [
+    "B_p7"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p7",
+    "req_R11"
+   ]
+  },
+  {
+   "id": "chk_R12_candB",
+   "type": "check_result",
+   "requirement": "R12",
+   "candidate": "B",
+   "critical": false,
+   "value": "pass",
+   "evidence": "IP54 enclosure, and 54 >= 54.",
+   "cited_passages": [
+    "B_p7"
+   ],
+   "generated_by": "act_checker_B",
+   "used": [
+    "ds_B_p7",
+    "req_R12"
+   ]
+  },
+  {
+   "id": "act_checker_C",
+   "type": "activity",
+   "activity_id": "checker_C",
+   "run": "exp0|drone_battery|0",
+   "agent": "checker",
+   "candidate": "C",
+   "used": [
+    "ds_C_p1",
+    "ds_C_p2",
+    "ds_C_p3",
+    "ds_C_p4",
+    "ds_C_p5",
+    "ds_C_p6",
+    "ds_C_p7",
+    "ds_C_p8",
+    "ds_C_p9",
+    "req_R01",
+    "req_R02",
+    "req_R03",
+    "req_R04",
+    "req_R05",
+    "req_R06",
+    "req_R07",
+    "req_R08",
+    "req_R09",
+    "req_R10",
+    "req_R11",
+    "req_R12"
+   ],
+   "generated": [
+    "chk_R01_candC",
+    "chk_R02_candC",
+    "chk_R03_candC",
+    "chk_R04_candC",
+    "chk_R05_candC",
+    "chk_R06_candC",
+    "chk_R07_candC",
+    "chk_R08_candC",
+    "chk_R09_candC",
+    "chk_R10_candC",
+    "chk_R11_candC",
+    "chk_R12_candC"
+   ]
+  },
+  {
+   "id": "ds_C_p1",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Nordcell N6 series pack: six lithium-ion polymer cells in series, 22.2 V nominal, 4500 mAh capacity.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p2",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Weight 640 g. Size 150 x 46 x 52 mm.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p3",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Continuous discharge 15C (67.5 A), peak 30C for 5 s.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p4",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Discharge temperature range −15 °C to 50 °C; charge between 0 °C and 40 °C.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p5",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Shipping documents: UN38.3 test summary and MSDS supplied with every order. Energy below 100 Wh, so no dangerous-goods exemption is needed for air freight.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p6",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Lifetime: 400 cycles to 80 % of initial capacity. Standard charge 1C (approximately 60 min).",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p7",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Supplied with XT90 connector and 8 AWG leads. Simple protection board without communication interface.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p8",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Price: 229 EUR per unit, delivery in 3 weeks.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_C_p9",
+   "type": "datasheet_passage",
+   "candidate": "C",
+   "text": "Nordcell is a Scandinavian start-up; all packs are designed in Gothenburg.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "chk_R01_candC",
+   "type": "check_result",
+   "requirement": "R01",
+   "candidate": "C",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Energy = 4500 mAh × 22.2 V / 1000 = 99.9 Wh, which is ≥ 90 Wh.",
+   "cited_passages": [
+    "C_p1"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p1",
+    "req_R01"
+   ]
+  },
+  {
+   "id": "chk_R02_candC",
+   "type": "check_result",
+   "requirement": "R02",
+   "candidate": "C",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Weight is 640 g, which is ≤ 800 g.",
+   "cited_passages": [
+    "C_p2"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p2",
+    "req_R02"
+   ]
+  },
+  {
+   "id": "chk_R03_candC",
+   "type": "check_result",
+   "requirement": "R03",
+   "candidate": "C",
+   "critical": true,
+   "value": "fail",
+   "evidence": "Discharge range is −15 °C to 50 °C but charge range is only 0 °C to 40 °C, so the required −10 °C to 45 °C operating range is not fully covered.",
+   "cited_passages": [
+    "C_p4"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p4",
+    "req_R03"
+   ]
+  },
+  {
+   "id": "chk_R04_candC",
+   "type": "check_result",
+   "requirement": "R04",
+   "candidate": "C",
+   "critical": true,
+   "value": "pass",
+   "evidence": "UN38.3 test summary is supplied with every order.",
+   "cited_passages": [
+    "C_p5"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p5",
+    "req_R04"
+   ]
+  },
+  {
+   "id": "chk_R05_candC",
+   "type": "check_result",
+   "requirement": "R05",
+   "candidate": "C",
+   "critical": true,
+   "value": "pass",
+   "evidence": "The pack has six lithium-ion polymer cells in series.",
+   "cited_passages": [
+    "C_p1"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p1",
+    "req_R05"
+   ]
+  },
+  {
+   "id": "chk_R06_candC",
+   "type": "check_result",
+   "requirement": "R06",
+   "candidate": "C",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Continuous discharge is 15C = 67.5 A, which is ≥ 40 A.",
+   "cited_passages": [
+    "C_p3"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p3",
+    "req_R06"
+   ]
+  },
+  {
+   "id": "chk_R07_candC",
+   "type": "check_result",
+   "requirement": "R07",
+   "candidate": "C",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Lifetime is 400 cycles to 80 % capacity, which is ≥ 300 cycles.",
+   "cited_passages": [
+    "C_p6"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p6",
+    "req_R07"
+   ]
+  },
+  {
+   "id": "chk_R08_candC",
+   "type": "check_result",
+   "requirement": "R08",
+   "candidate": "C",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Supplied with XT90 connector.",
+   "cited_passages": [
+    "C_p7"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p7",
+    "req_R08"
+   ]
+  },
+  {
+   "id": "chk_R09_candC",
+   "type": "check_result",
+   "requirement": "R09",
+   "candidate": "C",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Standard charge 1C takes approximately 60 min, which is ≤ 90 min.",
+   "cited_passages": [
+    "C_p6"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p6",
+    "req_R09"
+   ]
+  },
+  {
+   "id": "chk_R10_candC",
+   "type": "check_result",
+   "requirement": "R10",
+   "candidate": "C",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Size is 150 x 46 x 52 mm, so length 150 mm is ≤ 160 mm.",
+   "cited_passages": [
+    "C_p2"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p2",
+    "req_R10"
+   ]
+  },
+  {
+   "id": "chk_R11_candC",
+   "type": "check_result",
+   "requirement": "R11",
+   "candidate": "C",
+   "critical": false,
+   "value": "fail",
+   "evidence": "Protection board is simple without communication interface, so smart BMS SOC reporting is not present.",
+   "cited_passages": [
+    "C_p7"
+   ],
+   "generated_by": "act_checker_C",
+   "used": [
+    "ds_C_p7",
+    "req_R11"
+   ]
+  },
+  {
+   "id": "chk_R12_candC",
+   "type": "check_result",
+   "requirement": "R12",
+   "candidate": "C",
+   "critical": false,
+   "value": "unknown",
+   "evidence": "No IP rating is stated in the datasheet.",
+   "cited_passages": [],
+   "generated_by": "act_checker_C",
+   "used": [
+    "req_R12"
+   ]
+  },
+  {
+   "id": "act_checker_D",
+   "type": "activity",
+   "activity_id": "checker_D",
+   "run": "exp0|drone_battery|0",
+   "agent": "checker",
+   "candidate": "D",
+   "used": [
+    "ds_D_p1",
+    "ds_D_p2",
+    "ds_D_p3",
+    "ds_D_p4",
+    "ds_D_p5",
+    "ds_D_p6",
+    "ds_D_p7",
+    "ds_D_p8",
+    "req_R01",
+    "req_R02",
+    "req_R03",
+    "req_R04",
+    "req_R05",
+    "req_R06",
+    "req_R07",
+    "req_R08",
+    "req_R09",
+    "req_R10",
+    "req_R11",
+    "req_R12"
+   ],
+   "generated": [
+    "chk_R01_candD",
+    "chk_R02_candD",
+    "chk_R03_candD",
+    "chk_R04_candD",
+    "chk_R05_candD",
+    "chk_R06_candD",
+    "chk_R07_candD",
+    "chk_R08_candD",
+    "chk_R09_candD",
+    "chk_R10_candD",
+    "chk_R11_candD",
+    "chk_R12_candD"
+   ]
+  },
+  {
+   "id": "ds_D_p1",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "Volta Lite: 6S, 22.2 V, 4000 mAh lithium-polymer pack optimised for weight.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p2",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "Only 560 g! Dimensions 140 x 44 x 48 mm.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p3",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "30C continuous discharge rating.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p4",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "Usable from −20 °C to 55 °C.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p5",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "UN38.3 tested. CE and RoHS compliant.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p6",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "350 cycles to 80 % capacity; 2C charge capable (30 min).",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p7",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "XT90 connector, smart BMS with state-of-charge telemetry, splash-proof IP54 housing.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "ds_D_p8",
+   "type": "datasheet_passage",
+   "candidate": "D",
+   "text": "Price 159 EUR.",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "chk_R01_candD",
+   "type": "check_result",
+   "requirement": "R01",
+   "candidate": "D",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Energy = 4000 mAh × 22.2 V / 1000 = 88.8 Wh, which is below 90 Wh.",
+   "cited_passages": [
+    "D_p1"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p1",
+    "req_R01"
+   ]
+  },
+  {
+   "id": "chk_R02_candD",
+   "type": "check_result",
+   "requirement": "R02",
+   "candidate": "D",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Mass is 560 g, which is ≤ 800 g.",
+   "cited_passages": [
+    "D_p2"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p2",
+    "req_R02"
+   ]
+  },
+  {
+   "id": "chk_R03_candD",
+   "type": "check_result",
+   "requirement": "R03",
+   "candidate": "D",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Usable from −20 °C to 55 °C, which covers the required −10 °C to 45 °C range.",
+   "cited_passages": [
+    "D_p4"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p4",
+    "req_R03"
+   ]
+  },
+  {
+   "id": "chk_R04_candD",
+   "type": "check_result",
+   "requirement": "R04",
+   "candidate": "D",
+   "critical": true,
+   "value": "pass",
+   "evidence": "UN38.3 tested is explicitly stated.",
+   "cited_passages": [
+    "D_p5"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p5",
+    "req_R04"
+   ]
+  },
+  {
+   "id": "chk_R05_candD",
+   "type": "check_result",
+   "requirement": "R05",
+   "candidate": "D",
+   "critical": true,
+   "value": "pass",
+   "evidence": "The pack is 6S, i.e. 6 series cells.",
+   "cited_passages": [
+    "D_p1"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p1",
+    "req_R05"
+   ]
+  },
+  {
+   "id": "chk_R06_candD",
+   "type": "check_result",
+   "requirement": "R06",
+   "candidate": "D",
+   "critical": true,
+   "value": "unknown",
+   "evidence": "The datasheet gives a 30C rating but no capacity in Ah or C-rate conversion to continuous current in A is provided.",
+   "cited_passages": [],
+   "generated_by": "act_checker_D",
+   "used": [
+    "req_R06"
+   ]
+  },
+  {
+   "id": "chk_R07_candD",
+   "type": "check_result",
+   "requirement": "R07",
+   "candidate": "D",
+   "critical": false,
+   "value": "pass",
+   "evidence": "350 cycles to 80 % capacity, which is ≥ 300 cycles.",
+   "cited_passages": [
+    "D_p6"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p6",
+    "req_R07"
+   ]
+  },
+  {
+   "id": "chk_R08_candD",
+   "type": "check_result",
+   "requirement": "R08",
+   "candidate": "D",
+   "critical": false,
+   "value": "pass",
+   "evidence": "XT90 connector is explicitly stated.",
+   "cited_passages": [
+    "D_p7"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p7",
+    "req_R08"
+   ]
+  },
+  {
+   "id": "chk_R09_candD",
+   "type": "check_result",
+   "requirement": "R09",
+   "candidate": "D",
+   "critical": false,
+   "value": "pass",
+   "evidence": "2C charge capable (30 min), which is ≤ 90 min.",
+   "cited_passages": [
+    "D_p6"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p6",
+    "req_R09"
+   ]
+  },
+  {
+   "id": "chk_R10_candD",
+   "type": "check_result",
+   "requirement": "R10",
+   "candidate": "D",
+   "critical": true,
+   "value": "pass",
+   "evidence": "Length is 140 mm, which is ≤ 160 mm.",
+   "cited_passages": [
+    "D_p2"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p2",
+    "req_R10"
+   ]
+  },
+  {
+   "id": "chk_R11_candD",
+   "type": "check_result",
+   "requirement": "R11",
+   "candidate": "D",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Smart BMS with state-of-charge telemetry is explicitly stated.",
+   "cited_passages": [
+    "D_p7"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p7",
+    "req_R11"
+   ]
+  },
+  {
+   "id": "chk_R12_candD",
+   "type": "check_result",
+   "requirement": "R12",
+   "candidate": "D",
+   "critical": false,
+   "value": "pass",
+   "evidence": "Splash-proof IP54 housing, which is ≥ IP54.",
+   "cited_passages": [
+    "D_p7"
+   ],
+   "generated_by": "act_checker_D",
+   "used": [
+    "ds_D_p7",
+    "req_R12"
+   ]
+  },
+  {
+   "id": "act_decider",
+   "type": "activity",
+   "activity_id": "decider",
+   "run": "exp0|drone_battery|0",
+   "agent": "decider",
+   "used": [
+    "chk_R01_candA",
+    "chk_R01_candB",
+    "chk_R01_candC",
+    "chk_R01_candD",
+    "chk_R02_candA",
+    "chk_R02_candB",
+    "chk_R02_candC",
+    "chk_R02_candD",
+    "chk_R03_candA",
+    "chk_R03_candB",
+    "chk_R03_candC",
+    "chk_R03_candD",
+    "chk_R04_candA",
+    "chk_R04_candB",
+    "chk_R04_candC",
+    "chk_R04_candD",
+    "chk_R05_candA",
+    "chk_R05_candB",
+    "chk_R05_candC",
+    "chk_R05_candD",
+    "chk_R06_candA",
+    "chk_R06_candB",
+    "chk_R06_candC",
+    "chk_R06_candD",
+    "chk_R07_candA",
+    "chk_R07_candB",
+    "chk_R07_candC",
+    "chk_R07_candD",
+    "chk_R08_candA",
+    "chk_R08_candB",
+    "chk_R08_candC",
+    "chk_R08_candD",
+    "chk_R09_candA",
+    "chk_R09_candB",
+    "chk_R09_candC",
+    "chk_R09_candD",
+    "chk_R10_candA",
+    "chk_R10_candB",
+    "chk_R10_candC",
+    "chk_R10_candD",
+    "chk_R11_candA",
+    "chk_R11_candB",
+    "chk_R11_candC",
+    "chk_R11_candD",
+    "chk_R12_candA",
+    "chk_R12_candB",
+    "chk_R12_candC",
+    "chk_R12_candD",
+    "crit_K1",
+    "crit_K2",
+    "ds_A_p2",
+    "ds_A_p8",
+    "ds_B_p2",
+    "ds_B_p8",
+    "ds_C_p2",
+    "ds_C_p8",
+    "ds_D_p2",
+    "ds_D_p8"
+   ],
+   "generated": [
+    "decision"
+   ]
+  },
+  {
+   "id": "crit_K1",
+   "type": "criterion",
+   "text": "lowest unit price (EUR)",
+   "attribute": "price_eur",
+   "direction": "min",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "crit_K2",
+   "type": "criterion",
+   "text": "lowest mass (g)",
+   "attribute": "mass_g",
+   "direction": "min",
+   "generated_by": null,
+   "used": []
+  },
+  {
+   "id": "decision",
+   "type": "decision",
+   "value": "D",
+   "justification": "Candidate D is the only candidate that passes all critical requirements, including R03 (operating temperature range) and R06 (continuous current), while candidates A, B, and C fail R03. Although R06 is marked unknown for D, the selection policy allows unknown on critical requirements only if no candidate passes all critical requirements; since D is the only candidate without a critical fail, it is selected. Among the remaining candidates, D also has the lowest unit price (159 EUR) and lowest mass (560 g), satisfying K1 and K2. Therefore, D is chosen based on the priority criteria.",
+   "cited": [
+    "K1",
+    "K2",
+    "R03",
+    "R06"
+   ],
+   "generated_by": "act_decider",
+   "used": [
+    "chk_R03_candD",
+    "chk_R06_candD",
+    "crit_K1",
+    "crit_K2"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R01",
+   "activity": "act_extractor",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R02",
+   "activity": "act_extractor",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R03",
+   "activity": "act_extractor",
+   "requirement": "R03"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R04",
+   "activity": "act_extractor",
+   "requirement": "R04"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R05",
+   "activity": "act_extractor",
+   "requirement": "R05"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R06",
+   "activity": "act_extractor",
+   "requirement": "R06"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R07",
+   "activity": "act_extractor",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R08",
+   "activity": "act_extractor",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R09",
+   "activity": "act_extractor",
+   "requirement": "R09"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R10",
+   "activity": "act_extractor",
+   "requirement": "R10"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R11",
+   "activity": "act_extractor",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "req_R12",
+   "activity": "act_extractor",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S01",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S02",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R01",
+   "usedEntity": "spec_S02",
+   "requirement": "R01"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S03",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R02",
+   "usedEntity": "spec_S03",
+   "requirement": "R02"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S04",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R03",
+   "usedEntity": "spec_S04",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S05",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R04",
+   "usedEntity": "spec_S05",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S06",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R05",
+   "usedEntity": "spec_S06",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S07",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R06",
+   "usedEntity": "spec_S07",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S08",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R07",
+   "usedEntity": "spec_S08",
+   "requirement": "R07"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S09",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R08",
+   "usedEntity": "spec_S09",
+   "requirement": "R08"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S10",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R09",
+   "usedEntity": "spec_S10",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S11",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R10",
+   "usedEntity": "spec_S11",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S12",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R11",
+   "usedEntity": "spec_S12",
+   "requirement": "R11"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S13",
+   "cited": false
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "req_R12",
+   "usedEntity": "spec_S13",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S14",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_extractor",
+   "entity": "spec_S15",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R01",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candA",
+   "usedEntity": "req_R01",
+   "requirement": "R01"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R01",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candB",
+   "usedEntity": "req_R01",
+   "requirement": "R01"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R01",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candC",
+   "usedEntity": "req_R01",
+   "requirement": "R01"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R01",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candD",
+   "usedEntity": "req_R01",
+   "requirement": "R01"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R02",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candA",
+   "usedEntity": "req_R02",
+   "requirement": "R02"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R02",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candB",
+   "usedEntity": "req_R02",
+   "requirement": "R02"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R02",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candC",
+   "usedEntity": "req_R02",
+   "requirement": "R02"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R02",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candD",
+   "usedEntity": "req_R02",
+   "requirement": "R02"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R03",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candA",
+   "usedEntity": "req_R03",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R03",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candB",
+   "usedEntity": "req_R03",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R03",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candC",
+   "usedEntity": "req_R03",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R03",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candD",
+   "usedEntity": "req_R03",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R04",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candA",
+   "usedEntity": "req_R04",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R04",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candB",
+   "usedEntity": "req_R04",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R04",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candC",
+   "usedEntity": "req_R04",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R04",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candD",
+   "usedEntity": "req_R04",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R05",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candA",
+   "usedEntity": "req_R05",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R05",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candB",
+   "usedEntity": "req_R05",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R05",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candC",
+   "usedEntity": "req_R05",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R05",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candD",
+   "usedEntity": "req_R05",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R06",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candA",
+   "usedEntity": "req_R06",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R06",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candB",
+   "usedEntity": "req_R06",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R06",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candC",
+   "usedEntity": "req_R06",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R06",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candD",
+   "usedEntity": "req_R06",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R07",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candA",
+   "usedEntity": "req_R07",
+   "requirement": "R07"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R07",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candB",
+   "usedEntity": "req_R07",
+   "requirement": "R07"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R07",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candC",
+   "usedEntity": "req_R07",
+   "requirement": "R07"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R07",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candD",
+   "usedEntity": "req_R07",
+   "requirement": "R07"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R08",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candA",
+   "usedEntity": "req_R08",
+   "requirement": "R08"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R08",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candB",
+   "usedEntity": "req_R08",
+   "requirement": "R08"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R08",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candC",
+   "usedEntity": "req_R08",
+   "requirement": "R08"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R08",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candD",
+   "usedEntity": "req_R08",
+   "requirement": "R08"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R09",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candA",
+   "usedEntity": "req_R09",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R09",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candB",
+   "usedEntity": "req_R09",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R09",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candC",
+   "usedEntity": "req_R09",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R09",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candD",
+   "usedEntity": "req_R09",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R10",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candA",
+   "usedEntity": "req_R10",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R10",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candB",
+   "usedEntity": "req_R10",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R10",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candC",
+   "usedEntity": "req_R10",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R10",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candD",
+   "usedEntity": "req_R10",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R11",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candA",
+   "usedEntity": "req_R11",
+   "requirement": "R11"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R11",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candB",
+   "usedEntity": "req_R11",
+   "requirement": "R11"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R11",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candC",
+   "usedEntity": "req_R11",
+   "requirement": "R11"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R11",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candD",
+   "usedEntity": "req_R11",
+   "requirement": "R11"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "req_R12",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R12_candA",
+   "usedEntity": "req_R12",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "req_R12",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R12_candB",
+   "usedEntity": "req_R12",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "req_R12",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R12_candC",
+   "usedEntity": "req_R12",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "req_R12",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R12_candD",
+   "usedEntity": "req_R12",
+   "requirement": "R12"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R01_candA",
+   "activity": "act_checker_A",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R02_candA",
+   "activity": "act_checker_A",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R03_candA",
+   "activity": "act_checker_A",
+   "requirement": "R03"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R04_candA",
+   "activity": "act_checker_A",
+   "requirement": "R04"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R05_candA",
+   "activity": "act_checker_A",
+   "requirement": "R05"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R06_candA",
+   "activity": "act_checker_A",
+   "requirement": "R06"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R07_candA",
+   "activity": "act_checker_A",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R08_candA",
+   "activity": "act_checker_A",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R09_candA",
+   "activity": "act_checker_A",
+   "requirement": "R09"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R10_candA",
+   "activity": "act_checker_A",
+   "requirement": "R10"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R11_candA",
+   "activity": "act_checker_A",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R12_candA",
+   "activity": "act_checker_A",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p1",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candA",
+   "usedEntity": "ds_A_p1",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candA",
+   "usedEntity": "ds_A_p1",
+   "requirement": "R05"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candA",
+   "usedEntity": "ds_A_p1",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p2",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candA",
+   "usedEntity": "ds_A_p2",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candA",
+   "usedEntity": "ds_A_p2",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_A_p2",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p3",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candA",
+   "usedEntity": "ds_A_p3",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p4",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candA",
+   "usedEntity": "ds_A_p4",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p5",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candA",
+   "usedEntity": "ds_A_p5",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p6",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candA",
+   "usedEntity": "ds_A_p6",
+   "requirement": "R07"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p7",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candA",
+   "usedEntity": "ds_A_p7",
+   "requirement": "R08"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p8",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_A_p8",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_A",
+   "entity": "ds_A_p9",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R01_candA",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R02_candA",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R03_candA",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R04_candA",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R05_candA",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R06_candA",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R07_candA",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R08_candA",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R09_candA",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R10_candA",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R11_candA",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R12_candA",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R01_candB",
+   "activity": "act_checker_B",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R02_candB",
+   "activity": "act_checker_B",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R03_candB",
+   "activity": "act_checker_B",
+   "requirement": "R03"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R04_candB",
+   "activity": "act_checker_B",
+   "requirement": "R04"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R05_candB",
+   "activity": "act_checker_B",
+   "requirement": "R05"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R06_candB",
+   "activity": "act_checker_B",
+   "requirement": "R06"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R07_candB",
+   "activity": "act_checker_B",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R08_candB",
+   "activity": "act_checker_B",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R09_candB",
+   "activity": "act_checker_B",
+   "requirement": "R09"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R10_candB",
+   "activity": "act_checker_B",
+   "requirement": "R10"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R11_candB",
+   "activity": "act_checker_B",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R12_candB",
+   "activity": "act_checker_B",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p1",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candB",
+   "usedEntity": "ds_B_p1",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candB",
+   "usedEntity": "ds_B_p1",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p2",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candB",
+   "usedEntity": "ds_B_p2",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candB",
+   "usedEntity": "ds_B_p2",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_B_p2",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p3",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candB",
+   "usedEntity": "ds_B_p3",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p4",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candB",
+   "usedEntity": "ds_B_p4",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p5",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candB",
+   "usedEntity": "ds_B_p5",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p6",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candB",
+   "usedEntity": "ds_B_p6",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candB",
+   "usedEntity": "ds_B_p6",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p7",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candB",
+   "usedEntity": "ds_B_p7",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candB",
+   "usedEntity": "ds_B_p7",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R12_candB",
+   "usedEntity": "ds_B_p7",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_B",
+   "entity": "ds_B_p8",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_B_p8",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R01_candB",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R02_candB",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R03_candB",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R04_candB",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R05_candB",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R06_candB",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R07_candB",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R08_candB",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R09_candB",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R10_candB",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R11_candB",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R12_candB",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R01_candC",
+   "activity": "act_checker_C",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R02_candC",
+   "activity": "act_checker_C",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R03_candC",
+   "activity": "act_checker_C",
+   "requirement": "R03"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R04_candC",
+   "activity": "act_checker_C",
+   "requirement": "R04"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R05_candC",
+   "activity": "act_checker_C",
+   "requirement": "R05"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R06_candC",
+   "activity": "act_checker_C",
+   "requirement": "R06"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R07_candC",
+   "activity": "act_checker_C",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R08_candC",
+   "activity": "act_checker_C",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R09_candC",
+   "activity": "act_checker_C",
+   "requirement": "R09"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R10_candC",
+   "activity": "act_checker_C",
+   "requirement": "R10"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R11_candC",
+   "activity": "act_checker_C",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R12_candC",
+   "activity": "act_checker_C",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p1",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candC",
+   "usedEntity": "ds_C_p1",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candC",
+   "usedEntity": "ds_C_p1",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p2",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candC",
+   "usedEntity": "ds_C_p2",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candC",
+   "usedEntity": "ds_C_p2",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_C_p2",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p3",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R06_candC",
+   "usedEntity": "ds_C_p3",
+   "requirement": "R06"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p4",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candC",
+   "usedEntity": "ds_C_p4",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p5",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candC",
+   "usedEntity": "ds_C_p5",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p6",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candC",
+   "usedEntity": "ds_C_p6",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candC",
+   "usedEntity": "ds_C_p6",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p7",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candC",
+   "usedEntity": "ds_C_p7",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candC",
+   "usedEntity": "ds_C_p7",
+   "requirement": "R11"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p8",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_C_p8",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_C",
+   "entity": "ds_C_p9",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R01_candC",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R02_candC",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R03_candC",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R04_candC",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R05_candC",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R06_candC",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R07_candC",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R08_candC",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R09_candC",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R10_candC",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R11_candC",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R12_candC",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R01_candD",
+   "activity": "act_checker_D",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R02_candD",
+   "activity": "act_checker_D",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R03_candD",
+   "activity": "act_checker_D",
+   "requirement": "R03"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R04_candD",
+   "activity": "act_checker_D",
+   "requirement": "R04"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R05_candD",
+   "activity": "act_checker_D",
+   "requirement": "R05"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R06_candD",
+   "activity": "act_checker_D",
+   "requirement": "R06"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R07_candD",
+   "activity": "act_checker_D",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R08_candD",
+   "activity": "act_checker_D",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R09_candD",
+   "activity": "act_checker_D",
+   "requirement": "R09"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R10_candD",
+   "activity": "act_checker_D",
+   "requirement": "R10"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R11_candD",
+   "activity": "act_checker_D",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "chk_R12_candD",
+   "activity": "act_checker_D",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p1",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R01_candD",
+   "usedEntity": "ds_D_p1",
+   "requirement": "R01"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R05_candD",
+   "usedEntity": "ds_D_p1",
+   "requirement": "R05"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p2",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R02_candD",
+   "usedEntity": "ds_D_p2",
+   "requirement": "R02"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R10_candD",
+   "usedEntity": "ds_D_p2",
+   "requirement": "R10"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_D_p2",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p3",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p4",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R03_candD",
+   "usedEntity": "ds_D_p4",
+   "requirement": "R03"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p5",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R04_candD",
+   "usedEntity": "ds_D_p5",
+   "requirement": "R04"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p6",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R07_candD",
+   "usedEntity": "ds_D_p6",
+   "requirement": "R07"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R09_candD",
+   "usedEntity": "ds_D_p6",
+   "requirement": "R09"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p7",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R08_candD",
+   "usedEntity": "ds_D_p7",
+   "requirement": "R08"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R11_candD",
+   "usedEntity": "ds_D_p7",
+   "requirement": "R11"
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "chk_R12_candD",
+   "usedEntity": "ds_D_p7",
+   "requirement": "R12"
+  },
+  {
+   "type": "used",
+   "activity": "act_checker_D",
+   "entity": "ds_D_p8",
+   "cited": false
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "ds_D_p8",
+   "cited": true,
+   "route": "criteria"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R01_candD",
+   "requirement": "R01",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R02_candD",
+   "requirement": "R02",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R03_candD",
+   "requirement": "R03",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "decision",
+   "usedEntity": "chk_R03_candD",
+   "requirement": "R03",
+   "claimed": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R04_candD",
+   "requirement": "R04",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R05_candD",
+   "requirement": "R05",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R06_candD",
+   "requirement": "R06",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "decision",
+   "usedEntity": "chk_R06_candD",
+   "requirement": "R06",
+   "claimed": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R07_candD",
+   "requirement": "R07",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R08_candD",
+   "requirement": "R08",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R09_candD",
+   "requirement": "R09",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R10_candD",
+   "requirement": "R10",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R11_candD",
+   "requirement": "R11",
+   "cited": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "chk_R12_candD",
+   "requirement": "R12",
+   "cited": true
+  },
+  {
+   "type": "wasGeneratedBy",
+   "entity": "decision",
+   "activity": "act_decider"
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "crit_K1",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "decision",
+   "usedEntity": "crit_K1",
+   "claimed": true
+  },
+  {
+   "type": "used",
+   "activity": "act_decider",
+   "entity": "crit_K2",
+   "cited": true
+  },
+  {
+   "type": "wasDerivedFrom",
+   "generatedEntity": "decision",
+   "usedEntity": "crit_K2",
+   "claimed": true
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+  "candidates": [
+    {
+      "id": "A",
+      "name": "FlexLine PUR-4G1.5",
+      "passages": [
+        {"id": "A_p1", "text": "4 cores x 1.5 mm², fine-stranded copper. Current rating 16 A per core at 30 °C ambient; derating factor 0.87 at 40 °C.", "facts": {"rated_current_a": 13.9}},
+        {"id": "A_p2", "text": "Tested for 10 million bending cycles in a drag chain at 5 m/s.", "facts": {"flex_cycles": 10000000}},
+        {"id": "A_p3", "text": "Outer diameter 9.8 mm. Minimum bending radius in continuous motion: 7.5 x outer diameter.", "facts": {"outer_diameter_mm": 9.8, "min_bend_radius_mm": 73.5}},
+        {"id": "A_p4", "text": "Nominal voltage U0/U 0.6/1 kV.", "facts": {"rated_voltage_v": 600}},
+        {"id": "A_p5", "text": "Temperature range, moving: −20 °C to +80 °C.", "facts": {"flex_temp_c": [-20, 80]}},
+        {"id": "A_p6", "text": "Sheath: orange PUR (RAL 2003), halogen-free, flame-retardant, resistant to oils per EN 60811-404.", "facts": {"features": ["halogen_free", "oil_resistant"], "colour": "orange"},
+         "alt_text": "Sheath: grey PVC, flame-retardant, oil-resistant.", "alt_facts": {"features": ["oil_resistant"], "colour": "grey"}},
+        {"id": "A_p7", "text": "Approvals: UL AWM, CSA, CE.", "facts": {"certifications": ["UL", "CSA", "CE"]},
+         "alt_text": "Approvals: CE.", "alt_facts": {"certifications": ["CE"]}},
+        {"id": "A_p8", "text": "Price: 6.80 EUR/m (reel of 100 m).", "facts": {"price_eur_per_m": 6.8}}
+      ]
+    },
+    {
+      "id": "B",
+      "name": "ChainMaster 4x1.5",
+      "passages": [
+        {"id": "B_p1", "text": "Four cores of 1.5 mm². Rated current 16 A at 40 °C.", "facts": {"rated_current_a": 16}},
+        {"id": "B_p2", "text": "Guaranteed 5 million cycles at 3 m/s travel speed.", "facts": {"flex_cycles": 5000000}},
+        {"id": "B_p3", "text": "Outer diameter 8.9 mm. Minimum bending radius, moving: 10 x d.", "facts": {"outer_diameter_mm": 8.9, "min_bend_radius_mm": 89}},
+        {"id": "B_p4", "text": "Rated voltage 600 V.", "facts": {"rated_voltage_v": 600}},
+        {"id": "B_p5", "text": "Flexing temperature range −5 °C to +70 °C.", "facts": {"flex_temp_c": [-5, 70]}},
+        {"id": "B_p6", "text": "Halogen-free TPE sheath, grey, oil-resistant.", "facts": {"features": ["halogen_free", "oil_resistant"], "colour": "grey"},
+         "alt_text": "PVC sheath, grey, oil-resistant.", "alt_facts": {"features": ["oil_resistant"], "colour": "grey"}},
+        {"id": "B_p7", "text": "Approvals: CE.", "facts": {"certifications": ["CE"]},
+         "alt_text": "Approvals: UL AWM, CE.", "alt_facts": {"certifications": ["UL", "CE"]}},
+        {"id": "B_p8", "text": "Price: 4.20 EUR/m.", "facts": {"price_eur_per_m": 4.2}}
+      ]
+    },
+    {
+      "id": "C",
+      "name": "RoboCab TPE-4",
+      "passages": [
+        {"id": "C_p1", "text": "Conductors 4 x 1.5 mm²; ampacity 16 A at 40 °C ambient.", "facts": {"rated_current_a": 16}},
+        {"id": "C_p2", "text": "Lifetime in drag chain: 7 million cycles.", "facts": {"flex_cycles": 7000000}},
+        {"id": "C_p3", "text": "Outer diameter 10.4 mm; bending radius, moving: 7 x d.", "facts": {"outer_diameter_mm": 10.4, "min_bend_radius_mm": 72.8}},
+        {"id": "C_p4", "text": "U0/U: 0.6/1 kV.", "facts": {"rated_voltage_v": 600}},
+        {"id": "C_p5", "text": "Moving temperature range −10 °C to +70 °C.", "facts": {"flex_temp_c": [-10, 70]}},
+        {"id": "C_p6", "text": "Black TPE outer sheath, halogen-free according to IEC 60754-1.", "facts": {"features": ["halogen_free"], "colour": "black"},
+         "alt_text": "Black PVC outer sheath.", "alt_facts": {"features": [], "colour": "black"}},
+        {"id": "C_p7", "text": "Approvals: UL AWM Style 20233, CE.", "facts": {"certifications": ["UL", "CE"]},
+         "alt_text": "Approvals: CE.", "alt_facts": {"certifications": ["CE"]}},
+        {"id": "C_p8", "text": "Price: 5.60 EUR/m.", "facts": {"price_eur_per_m": 5.6}},
+        {"id": "C_p9", "text": "RoboCab cables are produced in Germany; samples are available within two days.", "facts": {}}
+      ]
+    },
+    {
+      "id": "D",
+      "name": "EcoFlex PVC 4G1.5",
+      "passages": [
+        {"id": "D_p1", "text": "Four cores of 1.5 mm², 16 A at 40 °C.", "facts": {"rated_current_a": 16}},
+        {"id": "D_p2", "text": "Suitable for drag chains: 5 million cycles.", "facts": {"flex_cycles": 5000000}},
+        {"id": "D_p3", "text": "Outer diameter 8.5 mm, bending radius moving 7.5 x d.", "facts": {"outer_diameter_mm": 8.5, "min_bend_radius_mm": 63.75}},
+        {"id": "D_p4", "text": "Nominal voltage 300/500 V.", "facts": {"rated_voltage_v": 500}},
+        {"id": "D_p5", "text": "Temperature range, moving: −5 °C to +70 °C.", "facts": {"flex_temp_c": [-5, 70]}},
+        {"id": "D_p6", "text": "Orange PVC sheath (RAL 2003), oil-resistant.", "facts": {"features": ["oil_resistant"], "colour": "orange"},
+         "alt_text": "Orange halogen-free PUR sheath, oil-resistant.", "alt_facts": {"features": ["halogen_free", "oil_resistant"], "colour": "orange"}},
+        {"id": "D_p7", "text": "Approvals: CE, UL.", "facts": {"certifications": ["CE", "UL"]},
+         "alt_text": "Approvals: CE.", "alt_facts": {"certifications": ["CE"]}},
+        {"id": "D_p8", "text": "Price: 2.90 EUR/m.", "facts": {"price_eur_per_m": 2.9}}
+      ]
+    }
+  ]
+}

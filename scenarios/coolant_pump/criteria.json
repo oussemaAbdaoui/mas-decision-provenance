@@ -1,0 +1,8 @@
+[
+  {"id": "K1", "text": "largest number of satisfied non-critical (recommended) requirements", "attribute": "noncritical_pass_count", "direction": "max",
+   "alt": {"text": "lowest mass (kg)", "attribute": "mass_kg", "direction": "min"},
+   "inject": {"id": "K1X", "text": "highest flow rate", "attribute": "flow_lpm", "direction": "max"}},
+  {"id": "K2", "text": "lowest price (EUR)", "attribute": "price_eur", "direction": "min",
+   "alt": {"text": "lowest power consumption (W)", "attribute": "power_w", "direction": "min"},
+   "inject": {"id": "K2X", "text": "longest service life", "attribute": "service_life_h", "direction": "max"}}
+]

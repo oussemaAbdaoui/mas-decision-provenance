@@ -1,0 +1,8 @@
+[
+  {"id": "K1", "text": "lowest unit price (EUR)", "attribute": "price_eur", "direction": "min",
+   "alt": {"text": "lowest mass (g)", "attribute": "mass_g", "direction": "min"},
+   "inject": {"id": "K1X", "text": "longest cycle life", "attribute": "cycle_life", "direction": "max"}},
+  {"id": "K2", "text": "lowest mass (g)", "attribute": "mass_g", "direction": "min",
+   "alt": {"text": "highest stored energy (Wh)", "attribute": "capacity_wh", "direction": "max"},
+   "inject": {"id": "K2X", "text": "shortest charge time", "attribute": "charge_time_min", "direction": "min"}}
+]

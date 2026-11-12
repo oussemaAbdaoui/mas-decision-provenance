@@ -1,0 +1,13 @@
+[drone_battery] Exp. 0: 10 unchanged runs
+[drone_battery]   decisions {'D': 7, 'B': 3} (correct: C); noise floor 3/9
+[drone_battery] Exp. 1: perturbations
+[drone_battery]   determinant: ['ds_B_p2', 'ds_B_p3', 'ds_B_p6', 'ds_B_p8', 'ds_D_p1', 'ds_D_p4', 'req_R03']
+[drone_battery] Exp. 2: cited ['K1', 'K2', 'R03', 'R06'] -> P=0.25 R=1.00
+[drone_battery] Cost: grouped ablation
+[drone_battery] Exp. 3: injected errors
+[drone_battery]   Exp. 3 E2 skipped: budget of $0.65 reached (spent $0.651); re-run with a higher --budget-usd to resume from the call log
+[drone_battery]   Exp. 3 E3 skipped: budget of $0.65 reached (spent $0.653); re-run with a higher --budget-usd to resume from the call log
+[drone_battery]   E1: D->D exact=False req=False grouped=None
+[drone_battery] done in 250s; calls so far: 854 API
+
+Report: C:\Users\oussama\Desktop\these\mas-decision-provenance\results\together-deepseek-ai-deepseek-v4.1-flash-noreason\RESULTS.md

@@ -1,0 +1,30 @@
+{
+  "scenario": "coolant_pump",
+  "title": "Coolant pump for a battery test bench",
+  "correct_candidate": "A",
+  "requirements": [
+    {"id": "R01", "attribute": "flow_lpm", "operator": ">=", "value": 40, "unit": "L/min", "critical": true, "note": "datasheets give m3/h (indirect)"},
+    {"id": "R02", "attribute": "pressure_bar", "operator": ">=", "value": 1.5, "unit": "bar", "critical": true, "note": "datasheets give head in m (1 bar ~ 10.2 m)"},
+    {"id": "R03", "attribute": "fluid_temp_c", "operator": "in_range", "value": [-20, 90], "unit": "°C", "critical": true, "alt_value": [-20, 80]},
+    {"id": "R04", "attribute": "supply_voltage_v", "operator": "==", "value": 24, "unit": "V", "critical": true, "note": "criticality implicit"},
+    {"id": "R05", "attribute": "power_w", "operator": "<=", "value": 250, "unit": "W", "critical": true, "note": "criticality implicit ('not an option')"},
+    {"id": "R06", "attribute": "media_compatibility", "operator": "includes", "value": "ethylene glycol", "unit": "", "critical": true, "alt_value": "mineral oil"},
+    {"id": "R07", "attribute": "noise_dba", "operator": "<=", "value": 55, "unit": "dB(A)", "critical": false},
+    {"id": "R08", "attribute": "features", "operator": "includes", "value": "PWM", "unit": "", "critical": false, "alt_value": "0-10V"},
+    {"id": "R09", "attribute": "ip_rating", "operator": ">=", "value": 67, "unit": "IP code", "critical": false},
+    {"id": "R10", "attribute": "service_life_h", "operator": ">=", "value": 20000, "unit": "h", "critical": false},
+    {"id": "R11", "attribute": "mass_kg", "operator": "<=", "value": 3, "unit": "kg", "critical": false}
+  ],
+  "injected_errors": [
+    {"id": "E1", "target": "requirement", "element": "R05", "field": "value", "new_value": 170, "critical": true,
+     "description": "Spare power budget mis-extracted as 170 W instead of 250 W."},
+    {"id": "E2", "target": "datasheet_passage", "element": "A_p1", "critical": true, "requirement": "R01",
+     "new_text": "Nominal flow 2.3 m³/h at 18 m head (water-glycol 50/50, 20 °C).", "new_facts": {"flow_lpm": 38.3, "pressure_bar": 1.76},
+     "description": "Flow of the correct candidate corrupted: 2.7 m3/h becomes 2.3 m3/h (below 40 L/min)."},
+    {"id": "E3", "target": "requirement", "element": "R07", "field": "value", "new_value": 50, "critical": false,
+     "description": "Noise recommendation mis-extracted as 50 dB(A)."},
+    {"id": "E4", "target": "datasheet_passage", "element": "C_p6", "critical": false, "requirement": "R08",
+     "new_text": "Speed setpoint through a PWM or analogue voltage input. Enclosure IP65.", "new_facts": {"features": ["PWM", "0-10V"], "ip_rating": 65},
+     "description": "Competitor datasheet wrongly claims PWM support."}
+  ]
+}

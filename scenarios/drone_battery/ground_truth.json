@@ -1,0 +1,31 @@
+{
+  "scenario": "drone_battery",
+  "title": "Battery pack for an inspection drone",
+  "correct_candidate": "C",
+  "requirements": [
+    {"id": "R01", "attribute": "capacity_wh", "operator": ">=", "value": 90, "unit": "Wh", "critical": true, "note": "30 min x 180 W = 90 Wh (indirect)"},
+    {"id": "R02", "attribute": "mass_g", "operator": "<=", "value": 800, "unit": "g", "critical": true},
+    {"id": "R03", "attribute": "operating_temp_c", "operator": "in_range", "value": [-10, 45], "unit": "°C", "critical": true, "alt_value": [0, 45]},
+    {"id": "R04", "attribute": "certifications", "operator": "includes", "value": "UN38.3", "unit": "", "critical": true, "alt_value": "IEC 62133-2", "note": "criticality implicit ('precondition')"},
+    {"id": "R05", "attribute": "cells_series", "operator": "==", "value": 6, "unit": "cells", "critical": true, "note": "criticality implicit ('cannot be used')"},
+    {"id": "R06", "attribute": "continuous_discharge_a", "operator": ">=", "value": 40, "unit": "A", "critical": true},
+    {"id": "R07", "attribute": "cycle_life", "operator": ">=", "value": 300, "unit": "cycles", "critical": false},
+    {"id": "R08", "attribute": "connector", "operator": "==", "value": "XT90", "unit": "", "critical": false, "alt_value": "XT60"},
+    {"id": "R09", "attribute": "charge_time_min", "operator": "<=", "value": 90, "unit": "min", "critical": false},
+    {"id": "R10", "attribute": "length_mm", "operator": "<=", "value": 160, "unit": "mm", "critical": true, "note": "criticality implicit ('cannot be mounted')"},
+    {"id": "R11", "attribute": "features", "operator": "includes", "value": "smart_bms", "unit": "", "critical": false, "alt_value": "self_heating"},
+    {"id": "R12", "attribute": "ip_rating", "operator": ">=", "value": 54, "unit": "IP code", "critical": false}
+  ],
+  "injected_errors": [
+    {"id": "E1", "target": "requirement", "element": "R01", "field": "value", "new_value": 110, "critical": true,
+     "description": "Energy threshold extracted with the wrong power figure (220 W instead of 180 W): 110 Wh instead of 90 Wh."},
+    {"id": "E2", "target": "datasheet_passage", "element": "C_p4", "critical": true, "requirement": "R03",
+     "new_text": "Discharge temperature range −5 °C to 50 °C; charge between 0 °C and 40 °C.", "new_facts": {"operating_temp_c": [-5, 50]},
+     "description": "Datasheet of the correct candidate corrupted: lower temperature bound -15 °C becomes -5 °C."},
+    {"id": "E3", "target": "requirement", "element": "R07", "field": "value", "new_value": 600, "critical": false,
+     "description": "Cycle-life recommendation mis-extracted as 600 cycles."},
+    {"id": "E4", "target": "datasheet_passage", "element": "C_p7", "critical": false, "requirement": "R08",
+     "new_text": "Supplied with XT60 connector and 8 AWG leads. Simple protection board without communication interface.", "new_facts": {"connector": "XT60", "features": []},
+     "description": "Connector type of the correct candidate corrupted (XT90 -> XT60)."}
+  ]
+}

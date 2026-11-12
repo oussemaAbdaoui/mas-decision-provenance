@@ -1,0 +1,413 @@
+{
+ "scenario": "drone_battery",
+ "reps": 5,
+ "rows": [
+  {
+   "strategy": "naive: every input element, full-chain replay",
+   "elements": 51,
+   "llm_calls": 1530,
+   "how": "computed",
+   "saving_vs_naive": 0.0
+  },
+  {
+   "strategy": "every input element, partial replay",
+   "elements": 51,
+   "llm_calls": 800,
+   "how": "computed",
+   "saving_vs_naive": 0.4771241830065359
+  },
+  {
+   "strategy": "graph-restricted elements, full-chain replay",
+   "elements": 45,
+   "llm_calls": 1350,
+   "how": "computed",
+   "saving_vs_naive": 0.11764705882352944
+  },
+  {
+   "strategy": "graph-restricted elements, partial replay, fixed reps",
+   "elements": 45,
+   "llm_calls": 620,
+   "how": "computed",
+   "saving_vs_naive": 0.5947712418300654
+  },
+  {
+   "strategy": "graph-restricted, partial replay, curtailed sequential testing",
+   "elements": 45,
+   "llm_calls": 217,
+   "how": "executed (Exp. 1)",
+   "saving_vs_naive": 0.8581699346405229
+  },
+  {
+   "strategy": "grouped ablation (graph-restricted, partial replay, curtailed)",
+   "elements": 8,
+   "llm_calls": 76,
+   "how": "executed",
+   "saving_vs_naive": 0.9503267973856209
+  }
+ ],
+ "removal_determinant_individual": [
+  "ds_B_p8",
+  "req_R03"
+ ],
+ "removal_determinant_grouped": [],
+ "grouped_missed": [
+  "ds_B_p8",
+  "req_R03"
+ ],
+ "grouped_joint_only_groups": [
+  "passages[D]"
+ ],
+ "grouped_detail": {
+  "groups": [
+   {
+    "name": "requirements[1]",
+    "members": [
+     "req_R01",
+     "req_R02",
+     "req_R03",
+     "req_R04"
+    ]
+   },
+   {
+    "name": "requirements[2]",
+    "members": [
+     "req_R05",
+     "req_R06",
+     "req_R07",
+     "req_R08"
+    ]
+   },
+   {
+    "name": "requirements[3]",
+    "members": [
+     "req_R09",
+     "req_R10",
+     "req_R11",
+     "req_R12"
+    ]
+   },
+   {
+    "name": "passages[A]",
+    "members": [
+     "ds_A_p1",
+     "ds_A_p2",
+     "ds_A_p3",
+     "ds_A_p4",
+     "ds_A_p5",
+     "ds_A_p6",
+     "ds_A_p7",
+     "ds_A_p8"
+    ]
+   },
+   {
+    "name": "passages[B]",
+    "members": [
+     "ds_B_p1",
+     "ds_B_p2",
+     "ds_B_p3",
+     "ds_B_p4",
+     "ds_B_p5",
+     "ds_B_p6",
+     "ds_B_p7",
+     "ds_B_p8"
+    ]
+   },
+   {
+    "name": "passages[C]",
+    "members": [
+     "ds_C_p1",
+     "ds_C_p2",
+     "ds_C_p3",
+     "ds_C_p4",
+     "ds_C_p5",
+     "ds_C_p6",
+     "ds_C_p7",
+     "ds_C_p8"
+    ]
+   },
+   {
+    "name": "passages[D]",
+    "members": [
+     "ds_D_p1",
+     "ds_D_p2",
+     "ds_D_p4",
+     "ds_D_p5",
+     "ds_D_p6",
+     "ds_D_p7",
+     "ds_D_p8"
+    ]
+   },
+   {
+    "name": "criteria",
+    "members": [
+     "crit_K1",
+     "crit_K2"
+    ]
+   }
+  ],
+  "group_tests": [
+   {
+    "element": "requirements[1]",
+    "kind": "group_removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 5,
+    "mean_changed_checks": 1.0,
+    "description": "removed R01; removed R02; removed R03; removed R04",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "requirements[2]",
+    "kind": "group_removal",
+    "n": 2,
+    "flips": 1,
+    "flip_rate": 0.5,
+    "p": 0.6181818181818182,
+    "decisions": [
+     "D",
+     "INVALID"
+    ],
+    "calls": 10,
+    "mean_changed_checks": 4.0,
+    "description": "removed R05; removed R06; removed R07; removed R08",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "requirements[3]",
+    "kind": "group_removal",
+    "n": 4,
+    "flips": 3,
+    "flip_rate": 0.75,
+    "p": 0.2167832167832168,
+    "decisions": [
+     "B",
+     "D",
+     "INVALID"
+    ],
+    "calls": 20,
+    "mean_changed_checks": 2.75,
+    "description": "removed R09; removed R10; removed R11; removed R12",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "passages[A]",
+    "kind": "group_removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 9.0,
+    "description": "removed A_p1; removed A_p2; removed A_p3; removed A_p4; removed A_p5; removed A_p6; removed A_p7; removed A_p8",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "passages[B]",
+    "kind": "group_removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 12.0,
+    "description": "removed B_p1; removed B_p2; removed B_p3; removed B_p4; removed B_p5; removed B_p6; removed B_p7; removed B_p8",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "passages[C]",
+    "kind": "group_removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 11.0,
+    "description": "removed C_p1; removed C_p2; removed C_p3; removed C_p4; removed C_p5; removed C_p6; removed C_p7; removed C_p8",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "passages[D]",
+    "kind": "group_removal",
+    "n": 5,
+    "flips": 5,
+    "flip_rate": 1.0,
+    "p": 0.02797202797202797,
+    "decisions": [
+     "B",
+     "INVALID"
+    ],
+    "calls": 10,
+    "mean_changed_checks": 11.0,
+    "description": "removed D_p1; removed D_p2; removed D_p4; removed D_p5; removed D_p6; removed D_p7; removed D_p8",
+    "curtailed": false,
+    "max_reps": 5
+   },
+   {
+    "element": "criteria",
+    "kind": "group_removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 1,
+    "mean_changed_checks": 0.0,
+    "description": "removed K1; removed K2",
+    "curtailed": true,
+    "max_reps": 5
+   }
+  ],
+  "refine_tests": [
+   {
+    "element": "ds_D_p1",
+    "kind": "removal",
+    "n": 3,
+    "flips": 2,
+    "flip_rate": 0.6666666666666666,
+    "p": 0.36363636363636365,
+    "decisions": [
+     "B",
+     "D"
+    ],
+    "calls": 6,
+    "mean_changed_checks": 2.0,
+    "description": "removed D_p1",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "ds_D_p2",
+    "kind": "removal",
+    "n": 4,
+    "flips": 3,
+    "flip_rate": 0.75,
+    "p": 0.2167832167832168,
+    "decisions": [
+     "B",
+     "D"
+    ],
+    "calls": 8,
+    "mean_changed_checks": 2.0,
+    "description": "removed D_p2",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "ds_D_p4",
+    "kind": "removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 2.0,
+    "description": "removed D_p4",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "ds_D_p5",
+    "kind": "removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 2.0,
+    "description": "removed D_p5",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "ds_D_p6",
+    "kind": "removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 2.0,
+    "description": "removed D_p6",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "ds_D_p7",
+    "kind": "removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 4.0,
+    "description": "removed D_p7",
+    "curtailed": true,
+    "max_reps": 5
+   },
+   {
+    "element": "ds_D_p8",
+    "kind": "removal",
+    "n": 1,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "p": 1.0,
+    "decisions": [
+     "D"
+    ],
+    "calls": 2,
+    "mean_changed_checks": 1.0,
+    "description": "removed D_p8",
+    "curtailed": true,
+    "max_reps": 5
+   }
+  ],
+  "determinant": [],
+  "joint_only_groups": [
+   "passages[D]"
+  ],
+  "calls": 76,
+  "flip_rate": {
+   "ds_D_p1": 0.6666666666666666,
+   "ds_D_p2": 0.75,
+   "ds_D_p4": 0.0,
+   "ds_D_p5": 0.0,
+   "ds_D_p6": 0.0,
+   "ds_D_p7": 0.0,
+   "ds_D_p8": 0.0
+  }
+ }
+}

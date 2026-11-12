@@ -1,0 +1,8 @@
+[
+  {"id": "K1", "text": "lowest price per metre (EUR/m)", "attribute": "price_eur_per_m", "direction": "min",
+   "alt": {"text": "smallest outer diameter (mm)", "attribute": "outer_diameter_mm", "direction": "min"},
+   "inject": {"id": "K1X", "text": "highest number of guaranteed bending cycles", "attribute": "flex_cycles", "direction": "max"}},
+  {"id": "K2", "text": "smallest outer diameter (mm)", "attribute": "outer_diameter_mm", "direction": "min",
+   "alt": {"text": "largest outer diameter (mm)", "attribute": "outer_diameter_mm", "direction": "max"},
+   "inject": {"id": "K2X", "text": "highest current rating", "attribute": "rated_current_a", "direction": "max"}}
+]

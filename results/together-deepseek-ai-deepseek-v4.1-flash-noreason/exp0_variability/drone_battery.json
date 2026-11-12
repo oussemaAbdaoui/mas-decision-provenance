@@ -1,0 +1,292 @@
+{
+ "scenario": "drone_battery",
+ "n_runs": 10,
+ "decisions": [
+  "D",
+  "B",
+  "D",
+  "D",
+  "B",
+  "D",
+  "D",
+  "B",
+  "D",
+  "D"
+ ],
+ "decision_counts": {
+  "D": 7,
+  "B": 3
+ },
+ "reference_decision": "D",
+ "correct_candidate": "C",
+ "decision_agreement": 0.7,
+ "decision_accuracy": 0.0,
+ "noise_floor": {
+  "flips": 3,
+  "n": 9
+ },
+ "noise_flip_rate": 0.3333333333333333,
+ "extraction": {
+  "R01": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    ">=",
+    "90",
+    true
+   ]
+  },
+  "R02": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "<=",
+    "800",
+    true
+   ]
+  },
+  "R03": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "in_range",
+    "[-10, 45]",
+    true
+   ]
+  },
+  "R04": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "includes",
+    "UN38.3",
+    true
+   ]
+  },
+  "R05": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "==",
+    "6",
+    true
+   ]
+  },
+  "R06": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    ">=",
+    "40",
+    true
+   ]
+  },
+  "R07": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    ">=",
+    "300",
+    false
+   ]
+  },
+  "R08": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "includes",
+    "XT90",
+    false
+   ]
+  },
+  "R09": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "<=",
+    "90",
+    false
+   ]
+  },
+  "R10": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "<=",
+    "160",
+    true
+   ]
+  },
+  "R11": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 0.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    "includes",
+    "smart_bms_soc_reporting",
+    false
+   ]
+  },
+  "R12": {
+   "present": 1.0,
+   "agreement": 1.0,
+   "value_correct": 1.0,
+   "criticality_correct": 1.0,
+   "modal": [
+    ">=",
+    "54",
+    false
+   ]
+  }
+ },
+ "extraction_agreement_mean": 1.0,
+ "extraction_value_accuracy": 0.9166666666666666,
+ "extraction_criticality_accuracy": 1.0,
+ "spurious_requirements": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+ ],
+ "check_cells_all_runs_agree": 0.9583333333333334,
+ "check_accuracy_vs_ground_truth": 0.9125,
+ "justification_citation_jaccard": 0.5904761904761904,
+ "cited_sets": [
+  [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  [
+   "K1",
+   "K2",
+   "R01",
+   "R02",
+   "R03",
+   "R04",
+   "R05",
+   "R06",
+   "R07",
+   "R08",
+   "R09",
+   "R10",
+   "R11",
+   "R12"
+  ],
+  [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  [
+   "K1",
+   "K2",
+   "R03",
+   "R04",
+   "R05",
+   "R06",
+   "R10"
+  ],
+  [
+   "K1",
+   "K2",
+   "R01",
+   "R02",
+   "R03",
+   "R04",
+   "R05",
+   "R06",
+   "R07",
+   "R08",
+   "R09",
+   "R10",
+   "R11",
+   "R12"
+  ],
+  [
+   "K1",
+   "K2",
+   "R01",
+   "R02",
+   "R03",
+   "R04",
+   "R05",
+   "R06",
+   "R07",
+   "R08",
+   "R09",
+   "R10",
+   "R11",
+   "R12"
+  ],
+  [
+   "K1",
+   "K2",
+   "R01",
+   "R02",
+   "R03",
+   "R04",
+   "R05",
+   "R06",
+   "R07",
+   "R08",
+   "R09",
+   "R10",
+   "R11",
+   "R12"
+  ],
+  [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ],
+  [
+   "K1",
+   "K2",
+   "R03",
+   "R06"
+  ]
+ ],
+ "calls": {
+  "logical": 60,
+  "logical_extractor": 10,
+  "logical_checker": 40,
+  "logical_decider": 10
+ }
+}
