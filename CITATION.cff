@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "mas-decision-provenance"
+authors:
+  - family-names: "Abdaoui"
+    given-names: "Oussema"
+date-released: "2026-11-22"
+year: 2026
+repository-code: "https://github.com/oussemaAbdaoui/mas-decision-provenance"
+url: "https://github.com/oussemaAbdaoui/mas-decision-provenance"
+license: MIT
+type: software
