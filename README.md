@@ -1,5 +1,15 @@
 # mas-decision-provenance
 
+> **TL;DR**
+> - **Problem:** when a multi-agent LLM chain justifies its decision, does the justification cite the information that actually determined it?
+> - **Method:** record every run as a PROV-style provenance graph, perturb graph-selected elements with partial replay, and test decision flips against the chain's run-to-run noise floor.
+> - **Result:** on `drone_battery` (DeepSeek-V4.1-Flash), the Decider's justification cites 4 elements but only 1 (R03) is determinant (precision 0.25), and curtailed sequential testing cuts attribution cost by 86% vs naive.
+
+<p align="center">
+  <img src="results/together-deepseek-ai-deepseek-v4.1-flash-noreason/figures/drone_battery_provenance.png" alt="Provenance graph of a drone_battery reference run, determinant elements in orange" width="49%">
+  <img src="results/together-deepseek-ai-deepseek-v4.1-flash-noreason/figures/flip_rates.png" alt="Flip rates per perturbed element, drone_battery" width="49%">
+</p>
+
 **Faithful explanations for a requirements-driven agent chain.**
 
 This small but complete prototype asks, on realistic engineering selection tasks:
