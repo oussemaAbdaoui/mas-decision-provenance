@@ -1,5 +1,7 @@
 # mas-decision-provenance
 
+[![tests](https://github.com/oussemaAbdaoui/mas-decision-provenance/actions/workflows/tests.yml/badge.svg)](https://github.com/oussemaAbdaoui/mas-decision-provenance/actions/workflows/tests.yml)
+
 > **TL;DR**
 > - **Problem:** when a multi-agent LLM chain justifies its decision, does the justification cite the information that actually determined it?
 > - **Method:** record every run as a PROV-style provenance graph, perturb graph-selected elements with partial replay, and test decision flips against the chain's run-to-run noise floor.
