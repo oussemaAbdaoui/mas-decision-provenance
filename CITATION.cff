@@ -4,6 +4,8 @@ title: "mas-decision-provenance"
 authors:
   - family-names: "Abdaoui"
     given-names: "Oussema"
+version: "1.0.0"
+doi: "10.5281/zenodo.24431220"
 date-released: "2026-11-22"
 year: 2026
 repository-code: "https://github.com/oussemaAbdaoui/mas-decision-provenance"

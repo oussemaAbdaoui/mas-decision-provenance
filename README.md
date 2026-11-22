@@ -1,6 +1,6 @@
 # mas-decision-provenance
 
-[![tests](https://github.com/oussemaAbdaoui/mas-decision-provenance/actions/workflows/tests.yml/badge.svg)](https://github.com/oussemaAbdaoui/mas-decision-provenance/actions/workflows/tests.yml)
+[![tests](https://github.com/oussemaAbdaoui/mas-decision-provenance/actions/workflows/tests.yml/badge.svg)](https://github.com/oussemaAbdaoui/mas-decision-provenance/actions/workflows/tests.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24431220.svg)](https://doi.org/10.5281/zenodo.24431220)
 
 > **TL;DR**
 > - **Problem:** when a multi-agent LLM chain justifies its decision, does the justification cite the information that actually determined it?
