@@ -209,6 +209,15 @@ So the four B passages are "determinant" only because touching anything in B's c
 - **Errors that push every candidate into non-compliance are hard to localise.** The policy then falls back to "fewest critical failures", and removing the faulty requirement can lead to the same candidate (`drag_chain_cable` E1: a 70 mm bending-radius limit fails all four cables, and without the limit the cheapest one wins anyway). On the mock, single-element removal localises 5 of the 6 critical-requirement errors at requirement level (2 of 6 exactly). None of the 6 non-critical errors changes the decision, and none is flagged.
 - **There are two kinds of determinants.** *Eliminators* are requirements that rule out a cheaper competitor (e.g. R01 rules out the 88.8 Wh pack). *Enablers* are the passages that prove the winner complies. Justifications tend to list everything that was satisfied, and the strict and lifted views separate these cases.
 
+**What "faithful" means here, and what it does not.** A cited element counts as faithful when it is *counterfactually necessary*: removing or altering it alone flips the decision more often than the noise floor. This is a deliberately strict, testable notion, in the line of counterfactual faithfulness tests (Atanasova et al., 2023; Lanham et al., 2023). It has known blind spots:
+
+- **Considered is not the same as pivotal.** The policy uses price and mass as tie-breakers, so a justification that mentions them can be an accurate account of the reasoning even if, in this instance, they never change the winner. Counterfactual necessity labels such mentions "not determinant"; it does not show that the agent lied.
+- **Redundant causes are invisible.** If two elements each suffice to disqualify a candidate, removing either alone flips nothing (Halpern, 2016). Grouped ablation partly covers this.
+- **Binary flips discard graded influence.** An element can shift the Decider's preference without flipping the final choice. Measures based on output probabilities (Siegel et al., 2024) would capture this; a flip-based test does not.
+- **Self-consistency is not faithfulness.** Parcalabescu & Frank (2024) argue that many "faithfulness" tests only check consistency between input and output. Here the comparison is against the chain's measured counterfactual dependencies, which is closer to the model's actual behaviour, but still behavioural, not mechanistic.
+
+The precision and recall reported here should therefore be read as agreement between the justification and the decision's *counterfactual dependencies*, not as a complete measure of faithfulness.
+
 **Limitations.**
 
 - **Budget-limited LLM evidence: one scenario, one model, about 0.85 USD.** Exp. 3 completed only one of its errors (E1, which turned out to be inconsequential), and the other two scenarios ran only on the offline backend. Running `--profile full` on all scenarios needs about 10,000 calls.
@@ -220,6 +229,8 @@ So the four B passages are "determinant" only because touching anything in B's c
 - Determinance here is single-element and counterfactual. Redundant causes (a candidate failing two critical requirements) are invisible to single-element removal by design; grouped ablation partly covers them.
 - The restricted element set relies on the Checker's citations (claimed provenance). The uncited-passage probe tests this assumption, but only by removal.
 - The selection policy text and the prompts are fixed and not perturbed.
+- **The chain studied is a wrong one.** Hidden reasoning was disabled, and the chain picks D (correct: C) in 7 of 10 runs. This makes it a good object to explain, but the findings may not carry over to a chain that decides correctly; a run with reasoning enabled is needed to check.
+- **No baseline attribution method.** The determinant set is not yet compared with cheaper alternatives, such as asking the Decider which inputs mattered (self-report) or input-level attribution (LIME, SHAP) over the same elements, so the added value of the provenance graph is argued rather than measured.
 
 ### Statistical power
 
@@ -271,8 +282,24 @@ python -m pytest -q                                            # offline tests
 
 Budget: the full profile makes about 10,000 LLM calls (about 800 prompt tokens each) for the three scenarios, mostly from Exp. 1 and from the Exp. 3 localisation. A Llama-3.1-8B model costs well under 1 USD; a 70B model costs a few USD on current hosted pricing. Free tiers are usually too rate-limited for the full profile. An interrupted run resumes from the call log, so already-made calls are not paid twice.
 
+## Related work
+
+- **Faithfulness of explanations.** Jacovi & Goldberg (2020) separate faithfulness (does the explanation reflect the model's reasoning?) from plausibility (does it convince a person?). Turpin et al. (2023) show that chain-of-thought explanations can omit the feature that actually drove a prediction, and Lanham et al. (2023) and Atanasova et al. (2023) test faithfulness by intervening on the explanation or the input and checking the output. Parcalabescu & Frank (2024) argue many such tests measure self-consistency instead, and Siegel et al. (2024) propose graded, probability-based alternatives to binary flips. This project applies the interventional idea to a **multi-agent chain**, where the decision depends on intermediate agent outputs rather than on a single prompt.
+- **Provenance for agentic systems.** W3C PROV-DM gives the entity / activity / relation vocabulary used here. PROV-AGENT (Souza et al., 2025) records provenance of agent interactions in workflows. This project goes one step further, from *recording* provenance to *testing* it: the graph selects which elements to perturb, decides which agents to replay, and collapses passages into the requirements that post-dominate them.
+- **Feature attribution.** LIME (Ribeiro et al., 2016) and SHAP (Lundberg & Lee, 2017) attribute a model's output to its input features by perturbation. The perturbation tests here are close in spirit but operate on structured elements of a chain (requirements, passages, criteria), with a significance test against run-to-run noise instead of a single model evaluation.
+- **Actual causation.** Single-element counterfactual necessity is the simplest test of actual causation; Halpern (2016) discusses why it misses redundant and pre-empted causes, which the grouped ablation only partly covers.
+
 ## References
 
+- P. Atanasova, O.-M. Camburu, C. Lioma, T. Lukasiewicz, J. G. Simonsen, I. Augenstein, *Faithfulness Tests for Natural Language Explanations*, ACL 2023.
+- Y. Benjamini, Y. Hochberg, *Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing*, J. Royal Statistical Society B, 1995.
+- J. Y. Halpern, *Actual Causality*, MIT Press, 2016.
+- A. Jacovi, Y. Goldberg, *Towards Faithfully Interpretable NLP Systems: How Should We Define and Evaluate Faithfulness?*, ACL 2020.
+- T. Lanham et al., *Measuring Faithfulness in Chain-of-Thought Reasoning*, arXiv:2307.13702, 2023.
+- S. M. Lundberg, S.-I. Lee, *A Unified Approach to Interpreting Model Predictions*, NeurIPS 2017.
+- L. Parcalabescu, A. Frank, *On Measuring Faithfulness or Self-consistency of Natural Language Explanations*, ACL 2024.
+- M. T. Ribeiro, S. Singh, C. Guestrin, *"Why Should I Trust You?": Explaining the Predictions of Any Classifier*, KDD 2016.
+- N. Y. Siegel, O.-M. Camburu, N. Heess, M. Pérez-Ortiz, *The Probabilities Also Matter: A More Faithful Metric for Faithfulness of Free-Text Explanations in Large Language Models*, ACL 2024.
 - R. Souza et al., *PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows*, 2025.
-- W3C, *PROV-DM: The PROV Data Model*, 2013.
 - M. Turpin, J. Michael, E. Perez, S. Bowman, *Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting*, NeurIPS 2023.
+- W3C, *PROV-DM: The PROV Data Model*, 2013.
