@@ -20,8 +20,6 @@ This small but complete prototype asks, on realistic engineering selection tasks
 2. **Which information actually determined it?** Elements selected by the graph are perturbed, only the downstream part of the chain is replayed, and decision flips are tested against the chain's own noise floor.
 3. **Does the agent's explanation match?** The requirements the Decider cites in its justification are compared with the elements found determinant (precision and recall).
 
-It extends my REACH work from a single translation step to a chain of three agents.
-
 > **Status.** The pipeline is complete for 3 scenarios and verified end to end offline. The LLM results below come from **one scenario (`drone_battery`) run on DeepSeek-V4.1-Flash** (open weights, via Together, hidden reasoning disabled). The run cost ≈ 0.85 USD in total, a deliberate budget constraint. Full report: [`results/together-deepseek-ai-deepseek-v4.1-flash-noreason/RESULTS.md`](results/together-deepseek-ai-deepseek-v4.1-flash-noreason/RESULTS.md).
 
 ---
