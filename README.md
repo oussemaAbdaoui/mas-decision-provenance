@@ -5,7 +5,7 @@
 > **TL;DR**
 > - **Problem:** when a multi-agent LLM chain justifies its decision, does the justification cite the information that actually determined it?
 > - **Method:** record every run as a PROV-style provenance graph, perturb graph-selected elements with partial replay, and test decision flips against the chain's run-to-run noise floor.
-> - **Result:** on `drone_battery` (DeepSeek-V4.1-Flash), the Decider's justification cites 4 elements but only 1 (R03) is determinant (precision 0.25), and curtailed sequential testing cuts attribution cost by 86% vs naive.
+> - **Result (one scenario, one model):** on `drone_battery` (DeepSeek-V4.1-Flash), the Decider's justification cites 4 elements, of which only R03 passes the per-test significance threshold (strict precision 0.25; uncorrected for multiple testing, and low-powered, see [Statistical power](#statistical-power)). Partial replay with curtailed sequential testing cuts attribution cost by 86% vs naive.
 
 <p align="center">
   <img src="results/together-deepseek-ai-deepseek-v4.1-flash-noreason/figures/drone_battery_provenance.png" alt="Provenance graph of a drone_battery reference run, determinant elements in orange" width="49%">
@@ -146,7 +146,18 @@ Definitions used throughout:
 
 Injection-sensitive (not counted as determinant): B_p1, B_p3, B_p4 and R07. A hallucinated critical cycle-life requirement next to R07 flips the decision. No test survives Benjamini–Hochberg over 135 tests; see Limitations.
 
-**Exp. 2: the justification is unfaithful in a measurable way.** The Decider cites {K1, K2, R03, R06}. Of these, only R03 is determinant: strict precision 0.25, recall 1.00 (mean precision over the 7 Exp. 0 runs with the same decision: 0.17). It cites price and mass (K1, K2) although perturbing either criterion never changes the outcome. It cites R06 although D's R06 verdict is "unknown", which the stated policy says should disqualify D. The determinant passages (D_p1, D_p4, B's passages) never appear, so lifted recall drops to 0.40.
+**Exp. 2: the justification and the measured dependencies diverge.** The Decider cites {K1, K2, R03, R06}. Of these, only R03 passes the per-test threshold: strict precision 0.25, recall 1.00 (mean precision over the 7 Exp. 0 runs with the same decision: 0.17). It cites price and mass (K1, K2), but neither flipped the decision in the replays that were run. It cites R06 although D's R06 verdict is "unknown", which the stated policy says should disqualify D. The determinant passages (D_p1, D_p4, B's passages) never appear, so lifted recall drops to 0.40.
+
+How strong this evidence is depends on how many replays each cited element received:
+
+| Cited element | Removal | Alteration | Injection | Reading |
+|---|---|---|---|---|
+| R03 | 5/5 flips (p = 0.028) | 5/5 (p = 0.028) | 1/2 | determinant |
+| R06 | **2/3** (p = 0.36) | 0/1 | 0/1 | **inconclusive**: removal flips well above the 3/9 noise rate, but 5/5 became unreachable, so curtailment stopped the test |
+| K1 (price) | 0/1 | 0/1 | 0/1 | no flip, but only **one replay** per perturbation |
+| K2 (mass) | 0/1 | 0/1 | 0/1 | no flip, but only **one replay** per perturbation |
+
+So precision 0.25 is a lower-powered estimate, not a settled value. If R06 is in fact determinant, strict precision is 0.50. The precision gap is therefore partly a finding about the agent and partly a limit of the test; resolving it needs more replays on these four elements (see [Statistical power](#statistical-power)).
 
 The provenance graph shows *why* the decision is wrong. The determinant elements trace back to three checker errors visible in the trace:
 
@@ -186,7 +197,7 @@ So the four B passages are "determinant" only because touching anything in B's c
 
 - **Temperature 0 is not deterministic.** The unchanged chain gave two different decisions (D 7, B 3), so a noise floor is necessary, not a formality. At 3/9, three replays can never reach significance (3/3 gives p = 0.09); five can (5/5 gives p = 0.028).
 - **The perturbation analysis explains a wrong decision.** It points to R03 and to D's capacity and temperature passages. The trace then shows the three checker errors behind them, including a verdict that contradicts its own evidence ("88.8 Wh, below 90 Wh" → pass).
-- **The justification is unfaithful in the Turpin et al. sense, and the gap is measurable.** Precision is 0.25 (0.17 averaged over runs). The Decider cites price and mass, which never matter, and R06, which by the stated policy should have disqualified its choice. Recall is high only in the strict view; the evidence the decision really rests on (passages) is never cited.
+- **The justification and the measured dependencies diverge, in the direction Turpin et al. describe.** Strict precision is 0.25 (0.17 averaged over runs), but this is a low-powered estimate: K1 and K2 were each replayed once per perturbation, and R06 is inconclusive (2/3 flips under removal). What does not depend on power: the Decider cites R06, which by the stated policy should have disqualified its choice, and it never cites the passages the decision rests on, so lifted recall is 0.40.
 - **Cross-talk is the main threat to element-level attribution.** With one Checker call per candidate, perturbing any of B's passages re-judges B's R03. Recording which verdicts changed in each replay separates direct dependencies from cross-talk, but it does so after the fact.
 - **Curtailed sequential testing gave the largest cost saving** (86% vs naive, with the same conclusions). Grouped ablation was cheaper still (95%) but missed two of the determinant elements, R03 among them.
 
@@ -201,7 +212,7 @@ So the four B passages are "determinant" only because touching anything in B's c
 **Limitations.**
 
 - **Budget-limited LLM evidence: one scenario, one model, about 0.85 USD.** Exp. 3 completed only one of its errors (E1, which turned out to be inconsequential), and the other two scenarios ran only on the offline backend. Running `--profile full` on all scenarios needs about 10,000 calls.
-- **Statistical power.** With a noise floor of 3/9 and 5 replays, the smallest achievable p-value is 0.028. No result survives Benjamini–Hochberg correction over the 135 tests, so the determinant set should be read as per-test findings, not as a family-wise claim. More replays, or a lower noise floor (e.g. reasoning on), would fix this.
+- **Statistical power** (details in [Statistical power](#statistical-power) below). No result survives Benjamini–Hochberg correction over the 135 tests, so the determinant set should be read as per-test findings, not as a family-wise claim. Power is also low, which biases the faithfulness result: an element that the Decider cites but that is wrongly labelled "not determinant" lowers precision.
 - The reference run is one sample from a non-deterministic chain (run 0 chose D, as 7 of 10 runs did). A different reference run would give a different, overlapping determinant set.
 - Small scale overall: 3 scenarios, 10–12 requirements, 4 candidates. The specifications are synthetic and written by the author, so ground truth is clean in a way real specifications are not.
 - Using the full-chain Exp. 0 noise as the null for downstream-only replays is conservative.
@@ -209,6 +220,23 @@ So the four B passages are "determinant" only because touching anything in B's c
 - Determinance here is single-element and counterfactual. Redundant causes (a candidate failing two critical requirements) are invisible to single-element removal by design; grouped ablation partly covers them.
 - The restricted element set relies on the Checker's citations (claimed provenance). The uncited-passage probe tests this assumption, but only by removal.
 - The selection policy text and the prompts are fixed and not perturbed.
+
+### Statistical power
+
+The design detects an element as determinant only when its flip rate is far above the noise floor. With the noise floor estimated from 9 runs (3 flips), the one-sided Fisher test at α = 0.05 needs:
+
+| Replays per test | Flips needed | Power if the true flip rate is 0.6 | 0.8 | 0.9 | 1.0 |
+|---|---|---|---|---|---|
+| 5 (reported run) | 5/5 | 0.08 | 0.33 | 0.59 | 1.00 |
+| 10 | 9/10 | 0.05 | 0.38 | 0.74 | 1.00 |
+| 15 | 12/15 | 0.09 | 0.65 | 0.94 | 1.00 |
+
+Power is the binomial probability of reaching the required number of flips, computed with the same Fisher test and the 3/9 noise floor. Two consequences:
+
+- **Only near-deterministic dependencies are detected.** An element that truly flips the decision 80% of the time is missed two times out of three with 5 replays. In the reported run, curtailment also stopped 102 of the 135 tests after a single replay, as designed, because their first replay did not flip.
+- **The noise floor is itself a bottleneck.** More replays help slowly because the null is estimated from only 9 runs; a larger Exp. 0 (more runs) raises power for every test at once. A lower noise floor (for example with reasoning enabled) would help even more.
+
+The cheapest way to firm up the faithfulness result is therefore targeted: more Exp. 0 runs plus more replays for the four cited elements only, rather than a larger run over all 45 elements.
 
 ## Repository structure
 
