@@ -24,13 +24,13 @@ This small but complete prototype asks, on realistic engineering selection tasks
 
 ---
 
-## Link to the thesis topic
+## Research questions and challenges
 
-| Research question / challenge in the call | Where it is addressed here |
+| Question / challenge | Where it is addressed here |
 |---|---|
 | **RQ1**: represent how a multi-agent system reached a decision | Provenance graph per run (`provenance/graph.py`): entities, activities, `used` / `wasGeneratedBy` / `wasDerivedFrom`, each tagged with its requirement ID. Exported as JSON, drawn as a figure. |
 | **RQ2**: identify the information that determined the decision | Exp. 1: graph-restricted perturbation (removal / alteration / injection) with partial replay; Fisher test against the Exp. 0 noise floor. Exp. 2 checks the agent's own justification against it. |
-| **RQ3** (partly): criticality of requirements | Every requirement is marked critical / non-critical (extracted by the agent, scored against ground truth). Determinant elements, justification gaps and injected-error localisation are reported separately for each class. |
+| **RQ3** (partly): does the criticality of a requirement change how it shapes the decision and the justification? | Every requirement is marked critical / non-critical (extracted by the agent, scored against ground truth). Determinant elements, justification gaps and injected-error localisation are reported separately for each class. |
 | Methodological challenge: **variability** | Exp. 0 measures run-to-run variability at temperature 0 with a fixed seed; it is the null distribution for every significance test. |
 | Methodological challenge: **cost** | Partial replay from cached upstream outputs, graph-based element pruning (with post-dominator collapse), curtailed sequential testing, and grouped ablation, with a call-count table. |
 
@@ -102,7 +102,7 @@ Example node from an exported graph:
 
 ### Granularity choice
 
-The call names granularity as a research question in its own right. These are the choices made here, and why.
+The granularity of a provenance graph is a research question in its own right: it decides what can be attributed at all. These are the choices made here, and why.
 
 - **One node per requirement, per check result (requirement × candidate) and per passage.** A requirement is the unit engineers reason about and the unit the justification cites. A check result is the smallest piece of information the Decider consumes. A passage (one to three facts) is the smallest piece of evidence an agent can cite. Coarser nodes (whole datasheet, whole specification) would make every perturbation hit many requirements at once, so attribution would be impossible. Finer nodes (individual numbers) would multiply perturbations without a matching unit of explanation.
 - **Activities stay at the granularity of the agent call.** The Checker is called once per candidate rather than once per (candidate, requirement) pair. This is a cost trade-off. A base run costs 6 calls instead of about 50. A perturbed requirement still re-runs only 4 checker calls, and a perturbed passage re-runs one. The price is possible *cross-talk*: a change to R07 can alter the verdict on R03 inside the same call. The replay records how many verdicts changed, so this is observable.
